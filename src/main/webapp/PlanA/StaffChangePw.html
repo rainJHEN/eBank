@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>員工更改密碼</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/ebanknav.css"> <!-- nav的漢堡包等設計 -->
+    <link rel="stylesheet" href="./css/bgColorfull.css"> <!-- nav的流動背景 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/time.js" defer></script> <!-- 右上角時鐘 -->
+    
+    
+
+    <style>
+        .loo{
+            margin-top: 10%;
+        }
+    </style>
+
+</head>
+<body class="text-start"  style="font-family: Helvetica; font-size: 18px;background-image: url(./img/bkbk.jpg);background-size: cover;height:100%;display: flex;flex-direction: column;min-height: 80.2vh;">
+
+    <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+        <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+        background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+        background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+        background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+        padding-top: 0.1rem;padding-bottom:0.1rem;">
+            <div class="container-fluid">
+                <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+                <a href="#" class="navbar-brand" style="color: white;"></a>
+                
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                            <!-- 回首頁 -->
+                            <div class="col-lg-4">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                                <li class="nav-item d-lg-block d-none">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- 右邊時間 -->
+                            <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                                <div id="clock" style="font-size: 16px;"></div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    </div>
+                </nav>      
+            </div>
+        </nav>
+
+
+        <!-- 頁籤 -->
+        <ul class="nav nav-tabs" style="background-color: aliceblue; font-size: 18px;">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">首頁</a>
+                <!-- <a class="nav-link active" aria-current="page" href="#">首頁</a> -->
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">個人資料</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./StaffChangePw.html">密碼修改</a></li>
+                    <li><a class="dropdown-item" href="#">假單填寫</a></li>
+                    <li><a class="dropdown-item" href="#">打卡紀錄</a></li>
+                    <li><a class="dropdown-item" href="#">出缺勤紀錄</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">客戶服務</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">客服中心</a></li>
+                    <li><a class="dropdown-item" href="#">查詢交易明細</a></li>
+                    <li><a class="dropdown-item" href="#">開戶專區</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">公告</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="loo">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3"> <!--調離左邊的位置 -->
+
+                    <div class="card">
+
+                        <div class="card-header" style="text-align: center;">
+                            <h4  style="margin-top: 10px;">修改密碼</h4>
+                        </div>
+
+                        <!-- 一般登入的內容 -->
+                        <div class="card-body" id="general" style="background: #fcfcfc;
+                        background: -moz-linear-gradient(left,  #fcfcfc 26%, #e8e2f7 95%);
+                        background: -webkit-linear-gradient(left,  #fcfcfc 26%,#e8e2f7 90%);
+                        background: linear-gradient(#fcfcfc 26%,#e8e2f7 95%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e8e2f7',GradientType=1 ); 
+                        padding-top: 0.1rem;padding-bottom:0.1rem;">
+                            <form
+                            style="margin-bottom: 2%;  color:black; border-radius: 15px; margin: 10px;">
+                            <!-- background-color: #d7d1e6 -->
+                            <div class="mb-3">
+                                <label class="form-label" for="employeeID" style="margin-top: 20px;">
+                                    <h4>員工編號</h4>
+                                </label>
+                                <input class="form-control" type="text" name="employeeID">
+                            </div>
+            
+                            <div class="mb-3">
+                                <label class="form-label" for="passwordold">
+                                    <h4>原始密碼</h4>
+                                </label>
+                                <input class="form-control" type="password" name="passwordold">
+                            </div>
+            
+                            <div class="mb-3">
+                                <label class="form-label" for="passwordnew">
+                                    <h4>新密碼</h4>
+                                </label>
+                                <input class="form-control" type="password" name="passwordnew">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="passwordnew2">
+                                    <h4>再次確認新密碼</h4>
+                                </label>
+                                <input class="form-control" type="password" name="passwordnew2">
+                            </div>
+            
+                            <input class="btn btn-primary d-block btn-user w-100" type="submit" value="儲存">
+            
+                        </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 下面的結束圖標 -->
+<br><br><br>
+<footer class="text-center">
+    <div class="container text-muted py-4 py-lg-5">
+        <ul class="list-inline">
+            <li class="list-inline-item me-3"><strong>關於e-Bank</strong></li>
+            <li class="list-inline-item me-3">l</li>
+            <li class="list-inline-item me-3"><strong>e-Bank APP</strong></li>
+            <li class="list-inline-item me-3">l</li>
+            <li class="list-inline-item me-3"><strong>聯繫客服</strong></li>
+        </ul>
+        <strong> &nbsp;©e-BANK國際商業銀行</strong>
+    </div>
+</footer>
+</body>
+
+</html>

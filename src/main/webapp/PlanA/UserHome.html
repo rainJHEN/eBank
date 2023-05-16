@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>個人主畫面</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bgColorfull.css"> <!-- nav的流動背景 -->
+    <link rel="stylesheet" href="./css/ebanknav.css"> <!-- nav的漢堡包等設計 -->
+    <link rel="stylesheet" href="./css/HomeFrame.css"><!-- 底部帳戶總覽跟金融看板切換的框框 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/mychart.js"></script> <!--這個是長條圖的js檔 -->
+    <script src="./js/chart.js"></script><!--若要使用統計圖表都會用到這個 -->
+    <script src="./js/time.js" defer></script> <!-- 右上角時鐘 -->
+
+   
+    
+    
+    <style>
+        /* 按鈕 */
+        .buttona{
+            /* background-color: #8b8ef9;  */
+            background: rgb(96,9,240);
+            background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+            border: none;
+            color: white; 
+            padding: 5px 5px 5px 5px; 
+            border: none; 
+            border-radius: 4px; 
+            font-size: 16px;
+        }
+        .buttona:hover {
+        box-shadow:  2px 2px 6px 0 rgba(255,255,255,.5),
+                    -2px -2px 6px 0 rgba(212, 109, 5, 0.5), 
+            inset -2px -2px 6px 0 rgba(255,255,255,.2),
+            inset 2px 2px 6px 0 rgba(0, 0, 0, .4);
+        }
+
+        /* 每個框框上面的大標題 */
+        .onh6{
+            font-weight: bold;
+            color: white;
+        }
+
+        .onlabel{
+            /* background: linear-gradient(0deg, rgb(93, 116, 216) 0%,rgb(31, 4, 188) 100%); */
+            background-color: rgb(121, 199, 247);
+        }
+    </style>
+   
+</head>
+
+<body  style="font-family: Helvetica; font-size: 18px;background-image: url(./img/bkbk.jpg);">
+
+    <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+        <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+        background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+        background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+        background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+        padding-top: 0.1rem;padding-bottom:0.1rem;">
+            <div class="container-fluid">
+                <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+                <a href="#" class="navbar-brand" style="color: white;"></a>
+                
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                            <!-- 回首頁 -->
+                            <div class="col-lg-4">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                                <li class="nav-item d-lg-block d-none">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- 右邊時間 -->
+                            <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                                <div id="clock" style="font-size: 16px;"></div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    </div>
+                </nav>      
+            </div>
+        </nav>
+
+        
+         <!-- 頁籤 -->
+         <!-- navbar-toggler 類別的元素是漢堡包按鈕。
+         當按下這個按鈕，navbar-collapse 類別的元素會展開。
+         dropdown-menu 類別的元素是下拉式選單。 -->
+
+        <nav class="navbar navbar-expand-lg navbar-light nav-tabs  " style="background-color: aliceblue;">
+            <!-- 縮小時有漢堡包 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+              <!-- 下面這行為漢堡包內容 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- 開始ul -->
+                <ul class="navbar-nav" style="font-size: 18px;padding-left: 100px;padding-right: 100px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">台幣存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">台幣轉帳</a></li>
+                            <li><a class="dropdown-item" href="#">換匯</a></li>
+                            <li><a class="dropdown-item" href="#">台幣交易明細</a></li>
+                            <!-- dropdown-item表示按鈕 -->
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">定期存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">查利率</a></li>
+                            <li><a class="dropdown-item" href="#">轉定存</a></li>
+                            <li><a class="dropdown-item" href="#">定存明細</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">外幣存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">查匯率</a></li>
+                            <li><a class="dropdown-item" href="#">換匯</a></li>
+                            <li><a class="dropdown-item" href="#">外幣帳戶</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">信用卡</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">帳單資訊</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </nav>
+
+
+    <!-- 這邊開始內容 -->
+    <div class="section over-hide">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section text-center py-5 py-md-0">
+                          <input class="pricing" type="checkbox" id="pricing" name="pricing"/>
+                          <label for="pricing"><span class="block-diff">帳戶總覽&emsp;&ensp;<span class="float-right">&emsp;金融看板</span></span></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+
+                                <!-- 帳戶總覽 -->
+                                <div class="card-front" style="background-color: rgb(250, 250, 250);">
+                                    <div class="pricing-wrap" style="padding-left: 150px;padding-right: 150px;padding-top: 30px;">
+                                        
+                                            <div class="row">
+                                                <!-- 台幣存款 -->
+                                                <div class="col" >
+                                                    <div class="card shadow mb-4" >
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped">
+                                                                <div class="onlabel card-header py-3">
+                                                                    <h6 class="onh6 fw-bold m-0">台幣存款</h6>
+                                                                </div>
+                                                                <p style="font-size: 20px;">
+                                                                    <br>
+                                                                    <span class="left"><strong>帳戶餘額：</strong></span>
+                                                                    <span class="right"><strong>54,310</strong></span>
+                                                                </p>
+                                                                <br>
+                                                                <p  style="font-size: 16px;">
+                                                                    <span class="left">活期存款：</span>
+                                                                    <span class="right">&ensp;&ensp;4,310</span>
+                                                                </p>
+                                                                
+                                                                <p  style="font-size: 16px;">
+                                                                    <span class="left">定期存款：</span>
+                                                                    <span class="right">50,000</span>
+                                                                </p>
+                                                                <br>
+                                                                <button class="buttona">我要轉帳</button>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 外幣存款 -->
+                                                <div class="col">
+                                                    <div class="card shadow mb-4">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped">
+                                                                <div class="card-header py-3 onlabel">
+                                                                    <h6 class="onh6 fw-bold m-0">外幣存款</h6>
+                                                                </div>
+                                                                <p  style="font-size: 20px;">
+                                                                    <br>
+                                                                    <span class="left"><strong>帳戶餘額：</strong></span>
+                                                                    <span class="right"><strong>49,000</strong></span>
+                                                                </p>
+                                                                <br>
+                                                                <p  style="font-size: 16px;">
+                                                                    <span class="left">活期存款：</span>
+                                                                    <span class="right">49,000</span>
+                                                                </p>
+                                                                <br>
+                                                                <p style="float: right; margin-bottom: 20px;margin-right: 20px;">(以上金額為約當新臺幣)</p>
+                                                                <br>
+                                                                <button class="buttona">外幣換匯</button>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 交易明細 -->
+                                                <div class="col2" >
+                                                <div class="card shadow mb-4">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped">
+                                                            <div class="card-header py-3 onlabel">
+                                                                <h6 class="onh6 fw-bold m-0">交易明細</h6>
+                                                            </div>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>日期</th>
+                                                                    <th>摘要</th>
+                                                                    <th>支出</th>
+                                                                    <th>存入</th>
+                                                                    <th>結餘</th>
+                                                                    <th>轉出入帳號</th>
+                                                                    <th>備註</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2023-05-04</td>
+                                                                    <td>轉入</td>
+                                                                    <td>-</td>
+                                                                    <td>500</td>
+                                                                    <td>4,310</td>
+                                                                    <td>036782741322</td>
+                                                                    <td>收入500 第四筆</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2023-05-04</td>
+                                                                    <td>轉入</td>
+                                                                    <td>-</td>
+                                                                    <td>2,000</td>
+                                                                    <td>3,810</td>
+                                                                    <td>024578632478</td>
+                                                                    <td>收入2000 第三筆</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2023-05-04</td>
+                                                                    <td>轉出</td>
+                                                                    <td>1000</td>
+                                                                    <td>-</td>
+                                                                    <td>1,810</td>
+                                                                    <td>024578632478</td>
+                                                                    <td>支出1000 第二筆</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+
+
+
+                                <!-- 金融看板 -->
+                                <div class="card-back" style="background-color: rgb(250, 250, 250); height: 1250px;">
+                                    <div class="pricing-wrap" style="padding-left: 150px;padding-right: 150px;padding-top: 30px;">
+                                        <div class="row"> <!-- 加row是為了讓他同一列 -->
+                                            <!-- 即期匯率 -->
+                                            <div class="col" >
+                                                <div class="card shadow mb-4">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped">
+                                                            <div class="card-header py-3 onlabel" style="margin-bottom: 7px;">
+                                                                <h6 class="onh6 fw-bold m-0">即期匯率</h6>
+                                                            </div>
+                                                            <thead>
+                                                                <tr>
+                                                                <th>幣別</th>
+                                                                <th>銀行買進</th>
+                                                                <th>銀行賣出</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody style="margin-bottom: 10px; margin-top: 10px;">
+                                                                <tr >
+                                                                <td>美元</td>
+                                                                <td>30.3010</td>
+                                                                <td>30.9790</td>
+                                                                </tr>
+                                                                <tr >
+                                                                <td>歐元</td>
+                                                                <td>33.0310</td>
+                                                                <td>34.3760</td>
+                                                                </tr>
+                                                                <tr >
+                                                                <td>日圓</td>
+                                                                <td>0.2208</td>
+                                                                <td>0.2315</td>
+                                                                </tr>
+                                                                
+                                                            </tbody>
+                                                           <br>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 長條圖 js內容在另檔-->
+                                            <div class="col" >
+                                                <div class="card shadow mb-4">
+                                                    <div class="table-responsive">
+                                                        <div class="card-header py-3 onlabel">
+                                                            <h6 class="onh6 fw-bold m-0">資產走勢圖</h6>
+                                                        </div>
+                                                        <br>
+                                                        <canvas id="myChart"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <!-- e-BANK點數-->
+                                            <div class="col" >
+                                                <div class="card shadow mb-4">
+                                                    <div class="table-responsive">
+                                                        <div class="card-header py-3 onlabel">
+                                                            <h6 class="onh6 fw-bold m-0">點數</h6>
+                                                        </div>
+                                                        <br>
+                                                        <p style="font-size: 20px;">
+                                                            <span class="left"><strong>點數總計：</strong></span>
+                                                            <span class="right"><strong>15點</strong></span>
+                                                            <button class="buttona" style="margin-left: 10px;">兌換</button>
+                                                        </p>
+                                                        <hr>
+                                                        <p  style="font-size: 16px;">
+                                                            <span class="left">e-BANK點數：</span>
+                                                            <span class="right">15點</span>
+                                                        </p>
+                                                        <p style="float: right; margin-bottom: 20px;margin-right: 20px;">2023/12/31 到期</p>
+                                                        <br>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 廣告-->
+                                            <div class="col" >
+                                                <div class="card shadow mb-4">
+                                                    <div class="table-responsive">
+                                                        <div class="card-header py-3 onlabel">
+                                                            <h6 class="onh6 fw-bold m-0">免手續費申請</h6>
+                                                        </div>
+                                                        <br>
+                                                        <p style="font-size: 20px;">
+                                                            <span class="left"><strong>跨轉10次免手續費</strong></span>
+                                                            <button class="buttona" style="margin-left: 10px;">我要申請</button>
+                                                        </p>
+                                                        <br>
+                                                        <p style="font-size: 15px; margin-bottom: 51px;">
+                                                        2023/6/30前新戶符合資格享跨轉10次免手續費
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- 新聞 -->
+                                        <div class="col" style="margin-top: 20px; margin-bottom: 0px;">
+                                            <div class="card shadow mb-4">
+                                                <div class="table-responsive">
+                                                    <div class="card-header py-3 onlabel">
+                                                        <h6 class="onh6 fw-bold m-0">新聞</h6>
+                                                    </div>
+                                                    <br>
+                                                    <!-- 新聞內容 一行12一個佔4 -->
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="card mb-4">
+                                                                <img class="card-img-top" src="./img/新聞1_ETF.jpg" alt="Card image cap">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">ETF績效王</h5>
+                                                                    <p>2023.05.18</p>
+                                                                    <p class="card-text">最受存股族青睞的高息ETF，受益人與規模不斷創新高...</p>
+                                                                    <a href="https://ctee.com.tw/livenews/aj/ctee/A95620002023033122462770" class="btn btn-primary" style="font-size: small;">Read More</a>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="card mb-4">
+                                                            <img class="card-img-top" src="./img/credit001.png" alt="Card image cap">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">哪種Pay繳稅賺更大? </h5>
+                                                                <p>2023.05.18</p>
+                                                                <p class="card-text">一次看清楚用哪個PAY暨方便又省荷包...</p>
+                                                                <a href="https://ctee.com.tw/livenews/aj/ctee/A95620002023050821302000" class="btn btn-primary" style="font-size: small;">Read More</a>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="card mb-4">
+                                                            <img class="card-img-top" src="./img/GetNews.png" style="height: 170px;" alt="Card image cap">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">美股掃瞄</h5>
+                                                                <p>2023.05.18</p>
+                                                                <p class="card-text">投資人觀望關鍵通膨數據和美國府會的債限談判進展...</p>
+                                                                <a href="https://ctee.com.tw/livenews/aj/chinatimes/20230509001141-260410" class="btn btn-primary" style="font-size: small;">Read More</a>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <a href="#" class="right"  style="margin-bottom: 15px;">點我查看更多</a>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                        </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+
+    
+
+    <!-- 下面的結束圖標 -->
+
+    <br><br><br>
+    <footer class="text-center text-white fixed-bottom" style="color: white;font-size: 18px;">
+        <!-- Grid container -->
+        <div class="d-flex bd-highlight yeee"
+            style="color: white;font-size: 18px;display: flex;text-align: center;">
+
+            <div class="p-2 flex-fill bd-highlight  d-lg-block d-none">e-BANK國際商業銀行 Copyright e-Bank International Bank. All Rights
+                Reserved.</div>
+
+            <div class="p-2 flex-fill bd-highlight">
+                <img src="./img/cloudyLogoMINI.png" style="width:5%;"><strong> &nbsp;©e-BANK國際商業銀行</strong>
+            </div>
+        </div>
+        <!-- Grid container -->
+    </footer>
+</body>
+
+</html>

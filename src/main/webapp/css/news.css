@@ -1,0 +1,90 @@
+.container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+
+    
+}
+.container2::-webkit-scrollbar {
+    display: none;
+}
+.card2 {
+    flex: 0 0 auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 200px;
+}
+.card2 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.arrow:hover {
+    opacity: 1;
+}
+.left-arrow {
+    left: 10px;
+}
+.right-arrow {
+    right: 10px;
+}
+
+/* html
+<div class="container2">
+                    <div class="card2">
+                        <h2>新聞標題 1</h2>
+                        <img src="./img/新聞1.jpg" alt="圖片描述">
+                        <p>這裡是新聞內容，可以寫很長很長的一段文字。</p>
+                        <p>如果想要了解更多，請點擊 <a href="超連結">這個超連結</a>。</p>
+                    </div>
+                    <div class="card2">
+                        <h2>新聞標題 2</h2>
+                        <img src="圖片連結" alt="圖片描述">
+                        <p>這裡是新聞內容，可以寫很長很長的一段文字。</p>
+                        <p>如果想要了解更多，請點擊 <a href="超連結">這個超連結</a>。</p>
+                    </div>
+                    <div class="card2">
+                        <h2>新聞標題 3</h2>
+                        <img src="圖片連結" alt="圖片描述">
+                        <p>這裡是新聞內容，可以寫很長很長的一段文字。</p>
+                        <p>如果想要了解更多，請點擊 <a href="超連結">這個超連結</a>。</p>
+                    </div>
+                   
+                    <!-- 可以根據需要添加更多的卡片 -->
+
+                    <div class="arrow left-arrow">&lt;</div>
+                    <div class="arrow right-arrow">&gt;</div>
+</div>
+<script>
+                    const container = document.querySelector('.container');
+                    const leftArrow = document.querySelector('.left-arrow');
+                    const rightArrow = document.querySelector('.right-arrow');
+                
+                    leftArrow.addEventListener('click', () => {
+                        container.scrollLeft -= 200; // 每次左移 200px
+                    });
+                
+                    rightArrow.addEventListener('click', () => {
+                        container.scrollLeft += 200; // 每次右移 200px
+                    });
+</script> */

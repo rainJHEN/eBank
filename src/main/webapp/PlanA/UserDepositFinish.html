@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>轉定存</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/butybutton.css">
+    <link rel="stylesheet" href="./css/LoginSignUp.css">
+    <link rel="stylesheet" href="./css/bgColorfull.css"> <!-- nav的流動背景 -->
+    <link rel="stylesheet" href="./css/ebanknav.css"> <!-- nav的漢堡包等設計 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/time.js" defer></script> <!-- 右上角時鐘 -->
+
+        <!-- 以下這三個都是要按確定送出後會跳出的模擬視窗 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- 以下是使用sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+        <style>
+            /* 我要nav跟body之間相隔100px */
+            body {
+                margin-top: 100px;
+            }
+
+            /* 設定頁籤內文字左右間距為 50 像素 */
+            .nav-tabs li {
+                padding: 0 40px;
+            }
+
+            /* 透明框框 */
+            #dede {
+                width: 90vw;/* 设置宽度为页面宽度的85% */
+                height: 67vh;/* 设置高度为页面高度的55% */
+                margin: 50px;
+                margin-top: 10px;
+                background-color: #b9b8b878;
+                border-radius: 30px;
+                border-style: none;
+                
+            }
+
+            #dededown {
+                width: 90vw;/* 设置宽度为页面宽度的85% */
+                height: 13vh;/* 设置高度为页面高度的13% */
+                margin: 50px;
+                margin-top: 10px;
+                background-color: #b9b8b878;
+                border-radius: 30px;
+                border-style: none;
+            }
+
+
+            #dede ul {
+                font-size: 1.4rem; /* 设置标题字体大小为相对于根元素的1.4倍 */
+                letter-spacing: 3px;
+            }
+
+            #dede ul li{
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            
+            #dede ul li span{
+                flex: 1;/* text-align: right; */
+                margin-right: 10px;
+                padding-left: 20px;/* 將此值修改為20px */
+            }
+
+            /* 確認送出按鈕 */
+            .bubu {
+                position: relative;
+                left: 40vw;
+                margin-top: 0px;
+                margin-bottom: 50px;
+            }
+
+
+            /* 轉定存那個框框 */
+            .buttonlike {
+                display: inline-block;
+                padding: 8px 8px;
+                font-size: 13px;
+                color: orange;
+                border: solid;
+                border-width: 1px;
+                border-radius: 4px;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 10px;
+                background-color: white;
+            }
+
+            #passwd {
+                width: 300px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 40px;
+                border-width: 0.5px;
+                font-size: 15px;
+            }
+
+
+            @media (max-width: 768px) {
+            .ulul {font-size: 10px;}
+            .pw {font-size: 10px;}
+            #passwd {width: 200px;}
+            }
+
+            
+        </style>
+</head>
+
+<body class="text-start"  style="font-family: Helvetica; font-size: 18px;background-image: url(./img/bkbk.jpg);background-size: cover;height:100%;display: flex;flex-direction: column;min-height: 80.2vh;">
+
+    <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+        <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+        background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+        background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+        background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+        padding-top: 0.1rem;padding-bottom:0.1rem;">
+            <div class="container-fluid">
+                <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+                <a href="#" class="navbar-brand" style="color: white;"></a>
+                
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                            <!-- 回首頁 -->
+                            <div class="col-lg-4">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                                <li class="nav-item d-lg-block d-none">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- 右邊時間 -->
+                            <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                                <div id="clock" style="font-size: 16px;"></div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    </div>
+                </nav>      
+            </div>
+        </nav>
+
+        
+         <!-- 頁籤 -->
+         <!-- navbar-toggler 類別的元素是漢堡包按鈕。
+         當按下這個按鈕，navbar-collapse 類別的元素會展開。
+         dropdown-menu 類別的元素是下拉式選單。 -->
+
+        <nav class="navbar navbar-expand-lg navbar-light nav-tabs  " style="background-color: aliceblue;">
+            <!-- 縮小時有漢堡包 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+              <!-- 下面這行為漢堡包內容 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- 開始ul -->
+                <ul class="navbar-nav" style="font-size: 18px;padding-left: 100px;padding-right: 100px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">台幣存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">台幣轉帳</a></li>
+                            <li><a class="dropdown-item" href="#">換匯</a></li>
+                            <li><a class="dropdown-item" href="#">台幣交易明細</a></li>
+                            <!-- dropdown-item表示按鈕 -->
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">定期存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">查利率</a></li>
+                            <li><a class="dropdown-item" href="#">轉定存</a></li>
+                            <li><a class="dropdown-item" href="#">定存明細</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">外幣存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">查匯率</a></li>
+                            <li><a class="dropdown-item" href="#">換匯</a></li>
+                            <li><a class="dropdown-item" href="#">外幣帳戶</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">信用卡</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">帳單資訊</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </nav>
+
+    <br>
+    
+
+    <main class="d-flex flex-nowrap">
+        <!-- padding -->
+        <div>
+            <div class="card shadow" id="dede" >
+                <!-- 內容，放這邊，透明框框內 -->
+                <div class="container-fluid">
+                    <div class="container-fluid" style="display: flex; justify-content: center; align-items: center;">
+                        <h3 style="margin-bottom: 10px;margin-top: 15px;"><strong>確認明細</strong></h3>
+                    </div>
+                    <hr>
+                    <div class="row" style="justify-content: center;" >
+                        <div class="col-md-3">
+                            <!--左侧内容-->
+                            <ul class="ulul"  style="font-size: 18px;">
+                                <li>交易日期</li>
+                                <li>轉出帳號</li>
+                                <li>轉存金額</li>
+                                <li>定存期別</li>
+                                <li>利率別</li>
+                                <li>利率</li>
+                                <li>付息方式</li>
+                                <li>本金/匯息帳號</li>
+                                <li>到期是否續存</li>
+                                <li>註記</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-3">
+                            <!--右侧内容-->
+                            <ul class="ulul"  style="font-size: 18px;">
+                                <li>2023/4/2</li>
+                                <li>000012341234</li>
+                                <li>10,000</li>
+                                <li>1年</li>
+                                <li>固定利率</li>
+                                <li>1.0900%</li>
+                                <li>到期轉本金</li>
+                                <li>000012341234</li>
+                                <li>不續存</li>
+                                <li></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="card shadow" id="dededown"><!--這個是為了白色透明框框 -->
+                <div class="container-fluid"><!--這個是為了分左右 -->
+                    <div class="row" style="justify-content: center;">
+                        <div class="col-md-3">
+                            <!--左侧内容-->
+                            <label for="passwd" class="pw"
+                                style="font-size: 18px; margin-left: 50px; margin-top: 40px;">網銀密碼</label>
+                        </div>
+                        <div class="col-md-3">
+                            <!--右侧内容-->
+                            <input type="password" id="passwd" name="passwd" placeholder="請留意英文大小寫之不同">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <input type="submit" value="確定送出" class="bubu btn" data-toggle="modal" data-target="#myModal">
+            <button type="button" onclick="editData()" class="bubu btn">修改</button> -->
+
+            <script>
+                function deleteFile() {
+                  Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      // 假設使用Ajax向後端發送刪除檔案的請求
+                      $.ajax({
+                        url: "delete_file.php",
+                        type: "POST",
+                        success: function(data) {
+                          // 刪除成功，顯示成功提示框
+                          Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                          );
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                          // 刪除失敗，顯示錯誤提示框
+                          Swal.fire(
+                            'Error!',
+                            'Failed to delete file.',
+                            'error'
+                          );
+                        }
+                      });
+                    }
+                  });
+                }
+            </script>
+
+            <div class="container" style="display: flex; justify-content: center; align-items: center; margin-bottom: 10vb;">
+                <button type="submit"  data-toggle="modal" data-target="#myModal" class="custom-btn btn-2 btn-lg" style="width: 150px;height: 45px;" onclick="okFile()">確定送出</button>
+                <button onclick="editData()" class="custom-btn btn-2 btn-lg" style="width: 150px;height: 45px;">修改</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 修改的 -->
+    <script>
+        // 点击修改按钮时，跳转到上一页并传递数据
+        function editData() {
+            // 通过JavaScript获取当前页面的URL
+            var currentUrl = window.location.href;
+            // 假设上一页的URL为"http://example.com/previous-page"
+            var previousUrl = "./UserDeposit.html";
+            // 使用JavaScript的replace()函数将当前URL替换成上一页的URL，并传递需要修改的数据
+            var dataToEdit = "需要修改的数据";
+            var newUrl = previousUrl + "?data=" + dataToEdit;
+            window.location.replace(newUrl);
+        }
+    </script>
+
+    <!-- 確認送出 -->
+    <script>
+        function okFile() {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: true
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: '交易確認',
+                text: "請確認資料正確，按下確認及完成交易，謝謝",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '確認',
+                cancelButtonText: '修改',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire(
+                    '成功',
+                    '轉定存交易已完成',
+                    'success'
+                ).then(() => {
+                    window.location.href = 'http://localhost:8080/MavenWeb/planA/UserHome.html';
+                });
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                    '交易尚未成立',
+                    '修改資料',
+                    'error'
+                    )
+                }
+                })
+            }
+    </script>
+
+    <!-- 下面的結束圖標 -->
+
+    <footer class="text-center text-white fixed-bottom" style="color: white;font-size: 18px">
+        <!-- Grid container -->
+        <div class="d-flex bd-highlight yeee"
+            style="color: white;font-size: 18px;display: flex;text-align: center;">
+
+            <div class="p-2 flex-fill bd-highlight d-lg-block d-none">e-BANK國際商業銀行 Copyright e-Bank International Bank. All Rights
+                Reserved.</div>
+
+            <div class="p-2 flex-fill bd-highlight">
+                <img src="./img/cloudyLogoMINI.png" style="width:5%;"><strong> &nbsp;©e-BANK國際商業銀行</strong>
+            </div>
+        </div>
+        <!-- Grid container -->
+    </footer>
+
+</body>
+
+</html>

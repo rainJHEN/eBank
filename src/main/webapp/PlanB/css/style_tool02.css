@@ -1,0 +1,75 @@
+@media (min-width:768px){
+    .news-input{
+        width:50%;
+    }
+}
+
+/* <!-- 這是最上面輪播圖的style --> */
+    /* 這是一個對象，定義他的高度 */
+    .carousel-item{
+     height: 32rem;   
+     /* background:#ffffff; */
+     color: black;
+     position: relative;
+     background-position:center;
+     background-size: cover;
+    }
+    #carouselContainer{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 50px;
+    }
+    .overlay-image{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-position: center;
+      background-size: cover;
+      /* 輪播圖不透明度 */
+    }
+/* 輪播圖END */
+
+/* 中間行列的6個按鈕框框 */
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+
+  }
+  
+  #six6button {
+    background-color:rgba(0,0,0,0);
+    /* 0000button的背景才透明 */
+    border: none;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* 中間6個按鈕的結束 */
+
+  /* 中間的三個框框size設定 */
+  
+  #tripleContainer {
+    width: 350px;
+    height: 350px;
+}
+
+/* 下面low-container */
+.low-container{
+  max-width: 750px;
+  margin-right: -50px;
+}
+.low-container-button{
+  position: absolute;
+  left: 80%; 
+  /* 設定左側位置為水平置中 */
+}
+/* 結束 */

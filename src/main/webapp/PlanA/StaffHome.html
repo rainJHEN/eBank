@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>員工專區</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bgColorfull.css"> <!-- nav的流動背景 -->
+    <link rel="stylesheet" href="./css/ebanknav.css"> <!-- nav的漢堡包等設計 -->
+    <script src="./js/time.js" defer></script> <!-- 右上角時鐘 -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            margin-top: 100px;
+        }
+        .littlebutton{
+            background-color: #564187; 
+            color: white; 
+            padding: 5px 5px; 
+            border-radius: 5px; 
+            font-size: 15px; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="text-start" style="font-family: Helvetica; font-size: 18px; padding-left: 20px;padding-right: 20px;background-image: url(./img/bkbk.jpg);background-size: cover;height:100%;display: flex;flex-direction: column;min-height: 80.2vh;">
+
+    <!-- 上面的navbr (start) -->
+
+    <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+        <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+        background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+        background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+        background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+        padding-top: 0.1rem;padding-bottom:0.1rem;">
+            <div class="container-fluid">
+                <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+                <a href="#" class="navbar-brand" style="color: white;"></a>
+                
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                            <!-- 回首頁 -->
+                            <div class="col-lg-4">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                                <li class="nav-item d-lg-block d-none">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- 右邊時間 -->
+                            <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                                <div id="clock" style="font-size: 16px;"></div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    </div>
+                </nav>      
+            </div>
+        </nav>
+
+
+        <!-- 頁籤 -->
+        <ul class="nav nav-tabs" style="background-color: aliceblue; font-size: 18px;">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">首頁</a>
+                <!-- <a class="nav-link active" aria-current="page" href="#">首頁</a> -->
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">個人資料</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./StaffChangePw.html">密碼修改</a></li>
+                    <li><a class="dropdown-item" href="#">假單填寫</a></li>
+                    <li><a class="dropdown-item" href="#">打卡紀錄</a></li>
+                    <li><a class="dropdown-item" href="#">出缺勤紀錄</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">客戶服務</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">客服中心</a></li>
+                    <li><a class="dropdown-item" href="#">查詢交易明細</a></li>
+                    <li><a class="dropdown-item" href="#">開戶專區</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">公告</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 圖片切換 -->
+   <br>
+    <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-bs-ride="carousel" style="padding-left: 170px; padding-right: 170px;">
+        <div class="carousel-indicators" >
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/員工旅遊ebank.png" class="d-block w-100" style="width: 100px;height: 400px">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/教育訓練.png" class="d-block w-100" style="width: 100px;height: 400px">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/網路維修.png" class="d-block w-100" style="width: 100px;height: 400px">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- 圖片切換 結束 -->
+
+    <!-- 內容 -->
+    <!-- 上面大字 -->
+    <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <br>
+            <h2 class="fw-bold">e-BANK 員工專區</h2>
+            <p class="text-muted">Only they who fulfill their duties in everyday matters will fulfill them on great occasions.</p>
+        </div>
+    </div>
+    <!-- 圖片加字 -->
+    <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+        <div class="col mb-4">
+            <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="./img/打卡icon.png" style="height: 270px; margin-right: 100px;" /></a>
+                <div class="py-4">
+                    <span class="mb-2 littlebutton">打卡</span>
+                    <h4 class="fw-bold" style="margin-top: 10px;">打卡專區</h4>
+                    <p class="text-muted">請記得於上下班打卡</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="./img/客服icon.png" style="height: 270px;" /></a>
+                <div class="py-4">
+                    <span class="mb-2 littlebutton">客服</span>
+                    <h4 class="fw-bold"  style="margin-top: 10px;">客服中心</h4>
+                    <p class="text-muted">提供客戶服務，並維護客戶關係</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="./img/交易紀錄.png" style="height: 270px; margin-right: 100px;" /></a>
+                <div class="py-4">
+                    <span class="mb-2 littlebutton">交易</span>
+                    <h4 class="fw-bold " style="margin-top: 10px;">查詢交易明細</h4>
+                    <p class="text-muted">查詢交易明細、修改客戶資料</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="./img/開戶icon.png" style="height: 270px;" /></a>
+                <div class="py-4">
+                    <span class="mb-2 littlebutton">開戶</span>
+                    <h4 class="fw-bold" style="margin-top: 10px;">開戶專區</h4>
+                    <p class="text-muted">協助客戶開戶</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 下面的結束圖標 -->
+    <br><br><br>
+    <footer class="text-center text-white fixed-bottom" style="color: white;font-size: 18px;">
+        <!-- Grid container -->
+        <div class="d-flex bd-highlight yeee"
+            style="color: white;font-size: 18px;display: flex;text-align: center;">
+
+            <div class="p-2 flex-fill bd-highlight  d-lg-block d-none">e-BANK國際商業銀行 Copyright e-Bank International Bank. All Rights
+                Reserved.</div>
+
+            <div class="p-2 flex-fill bd-highlight">
+                <img src="./img/cloudyLogoMINI.png" style="width:5%;"><strong> &nbsp;©e-BANK國際商業銀行</strong>
+            </div>
+        </div>
+        <!-- Grid container -->
+    </footer>
+
+
+
+    
+</body>
+
+</html>

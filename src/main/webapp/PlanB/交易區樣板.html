@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- VerX.X -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>樣板</title>
+    <link rel="stylesheet" href="./bootstrap5/css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <link href="./img/eBankicon2.ico" rel="icon" type="image/png">
+    <link rel="stylesheet" href="./css/butybutton.css">
+    <link rel="stylesheet" href="./css/LoginSignUp.css">
+
+
+    <!-- 我要nav跟body之間相隔100px -->
+    <style>
+        body {
+            margin-top: 100px;
+        }
+
+        /* 頁籤碰到時，返的顏色 */
+        .nav-tabs .nav-link:hover {
+            background-color: #e9ecef;
+        }
+
+        .nav-tabs li {
+            padding: 0 40px;
+            /* 設定頁籤內文字左右間距為 50 像素 */
+
+        }
+    </style>
+</head>
+
+<body class="text-start"  style="background-image: url(./img/whiteBoxbg02.png);background-size: cover;">
+
+    <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+        <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+    background: -moz-linear-gradient(left,  #130041 26%, #e7e5ec 70%);
+    background: -webkit-linear-gradient(left,  #130041 26%,#e7e5ec 70%);
+    background: linear-gradient(to right,  #130041 26%,#e7e5ec 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );  padding-top: 0.1rem;padding-bottom:0.1rem;">
+        <div class="container-fluid">
+            <img src="./img/logoNameClose.png" alt="" style="width:30px;margin-right:20px;margin-left: 30px;">
+            <a href="#" class="navbar-brand" style="color: white;">e-BANK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 17px;">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#">個人金融</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-left: 20px;">交易所</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-left: 70px;">登入</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+        <!-- 頁籤 -->
+        <ul class="nav nav-tabs " style="background-color: aliceblue; font-size: 18px;">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">台幣存款</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">台幣轉帳</a></li>
+                    <li><a class="dropdown-item" href="#">換匯</a></li>
+                    <li><a class="dropdown-item" href="#">台幣交易明細</a></li>
+                    <!-- dropdown-item表示按鈕 -->
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">定期存款</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">查利率</a></li>
+                    <li><a class="dropdown-item" href="#">轉定存</a></li>
+                    <li><a class="dropdown-item" href="#">定存明細</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">外幣存款</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">查匯率</a></li>
+                    <li><a class="dropdown-item" href="#">換匯</a></li>
+                    <li><a class="dropdown-item" href="#">外幣帳戶</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">信用卡</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">帳單資訊</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">投資/證券</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">ETF</a></li>
+                    <li><a class="dropdown-item" href="#">證券</a></li>
+                    <li><a class="dropdown-item" href="#">債券</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">保險</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">網路投保</a></li>
+                    <li><a class="dropdown-item" href="#">進度查詢</a></li>
+                    <li><a class="dropdown-item" href="#">保單明細</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <main class="d-flex flex-nowrap">
+        <!--  旁邊的框框sider-->
+        <!-- svg為圖標 可去https://www.svgrepo.com/找 -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="home" viewBox="0 0 16 16">
+                <path
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+            </symbol>
+            <symbol id="grid" viewBox="0 0 16 16">
+                <path
+                    d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+            </symbol>
+            <symbol id="pen" viewBox="0 0 22 22">
+                <path fill-rule="evenodd"
+                    d="M16 2H8C4 2 2 4 2 8V21C2 21.55 2.45 22 3 22H16C20 22 22 20 22 16V8C22 4 20 2 16 2ZM11.11 16.66C10.86 16.91 10.4 17.14 10.06 17.19L7.98 17.48C7.9 17.49 7.82 17.5 7.75 17.5C7.4 17.5 7.08 17.38 6.85 17.15C6.57 16.87 6.45 16.46 6.52 16.02L6.81 13.94C6.86 13.6 7.09 13.13 7.34 12.89L11.11 9.12C11.17 9.3 11.25 9.48 11.34 9.68C11.43 9.86 11.52 10.04 11.62 10.21C11.7 10.35 11.79 10.49 11.87 10.59C11.97 10.74 12.07 10.87 12.14 10.94C12.18 11 12.22 11.04 12.23 11.06C12.45 11.31 12.68 11.55 12.9 11.73C12.96 11.79 13 11.82 13.01 11.83C13.14 11.93 13.26 12.04 13.38 12.11C13.51 12.21 13.65 12.3 13.79 12.38C13.96 12.48 14.14 12.58 14.33 12.67C14.52 12.76 14.7 12.83 14.88 12.89L11.11 16.66ZM16.55 11.23L15.77 12.01C15.72 12.06 15.65 12.09 15.58 12.09C15.56 12.09 15.52 12.09 15.5 12.08C13.78 11.59 12.41 10.22 11.92 8.5C11.89 8.41 11.92 8.31 11.99 8.24L12.78 7.45C14.07 6.16 15.29 6.19 16.55 7.45C17.19 8.09 17.51 8.71 17.5 9.35C17.5 9.98 17.19 10.59 16.55 11.23Z" />
+            </symbol>
+            <symbol id="card" viewBox="0 0 22 22">
+                <path fill-rule="evenodd"
+                    d="M22 21.25C22 21.66 21.66 22 21.25 22H2.75C2.34 22 2 21.66 2 21.25C2 20.84 2.34 20.5 2.75 20.5H21.25C21.66 20.5 22 20.84 22 21.25Z" />
+                <path
+                    d="M15.3914 4.52172L4.65141 15.2617C4.24141 15.6717 3.58141 15.6717 3.18141 15.2617H3.17141C1.78141 13.8617 1.78141 11.6017 3.17141 10.2117L10.3214 3.06172C11.7214 1.66172 13.9814 1.66172 15.3814 3.06172C15.7914 3.45172 15.7914 4.12172 15.3914 4.52172Z"
+                    fill="#292D32" />
+                <path fill-rule="evenodd"
+                    d="M20.8214 8.49031L17.7714 5.44031C17.3614 5.03031 16.7014 5.03031 16.3014 5.44031L5.56141 16.1803C5.15141 16.5803 5.15141 17.2403 5.56141 17.6503L8.61141 20.7103C10.0114 22.1003 12.2714 22.1003 13.6714 20.7103L20.8114 13.5603C22.2314 12.1603 22.2314 9.89031 20.8214 8.49031ZM12.7614 17.5203L11.5514 18.7403C11.3014 18.9903 10.8914 18.9903 10.6314 18.7403C10.3814 18.4903 10.3814 18.0803 10.6314 17.8203L11.8514 16.6003C12.0914 16.3603 12.5114 16.3603 12.7614 16.6003C13.0114 16.8503 13.0114 17.2803 12.7614 17.5203ZM16.7314 13.5503L14.2914 16.0003C14.0414 16.2403 13.6314 16.2403 13.3714 16.0003C13.1214 15.7503 13.1214 15.3403 13.3714 15.0803L15.8214 12.6303C16.0614 12.3903 16.4814 12.3903 16.7314 12.6303C16.9814 12.8903 16.9814 13.3003 16.7314 13.5503Z" />
+            </symbol>
+            <symbol id="people-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </symbol>
+        </svg>
+
+        <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;height: 0rem;">
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                <li class="nav-item">
+                    <!-- active誰加這個就會返藍  data-bs-toggle="tooltip"當滑鼠過來時會顯示title的字，顯示在data-bs-placement側-->
+                    <a href="#" class="nav-link py-3 border-bottom" aria-current="page" title="回首頁"
+                        data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Home">
+                            <use xlink:href="#home" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom" title="申辦信用卡" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Dashboard">
+                            <use xlink:href="#card" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom" title="個人服務/功能" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Products">
+                            <use xlink:href="#grid" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link active py-3 border-bottom" title="個人主畫面" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Customers">
+                            <use xlink:href="#people-circle" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom" title="意見反映" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <svg class="bi" width="24" height="24" role="img" aria-label="Orders">
+                            <use xlink:href="#pen" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <!-- 這邊刪掉原本的左下角登出 -->
+        </div>
+
+        <!-- 內容 -->
+
+            
+                <!-- padding -->
+                <div class="container-fluid text-light" style="background-color: #90909034; border-radius: 30px;margin-left: 50px;margin-right: 100px;margin-bottom: 70px;">
+                    <div class="row align-items-center justify-content-between d-flex">
+                        <!-- justify-content 属性（水平）对齐弹性容器的项目，当项目不占用主轴上所有可用空间时。 -->
+                            <!-- .img-fluid 設定為響應式圖片。運用 max-width: 100%; 和 height: auto;，讓圖片可依父元素進行縮放 -->
+                        <div class="col-md p-5" style="color: black;">
+
+                            <a href="https://front.codes/" class="logo" target="_blank">
+                                <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
+                            </a>
+                        
+                            <div class="section">
+                                <div class="container">
+                                    <div class="row full-height justify-content-center">
+                                        <div class="col-12 text-center align-self-center py-5">
+                                            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                                                <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                                                  <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                                                  <label for="reg-log"></label>
+                                                <div class="card-3d-wrap mx-auto">
+                                                    <div class="card-3d-wrapper">
+                                                        <div class="card-front">
+                                                            <div class="center-wrap">
+                                                                <div class="section text-center">
+                                                                    <h4 class="mb-4 pb-3">Log In</h4>
+                                                                    <div class="form-group">
+                                                                        <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                                        <i class="input-icon uil uil-at"></i>
+                                                                    </div>	
+                                                                    <div class="form-group mt-2">
+                                                                        <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                                        <i class="input-icon uil uil-lock-alt"></i>
+                                                                    </div>
+                                                                    <a href="#" class="btn mt-4">submit</a>
+                                                                    <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                        <div class="card-back">
+                                                            <div class="center-wrap">
+                                                                <div class="section text-center">
+                                                                    <h4 class="mb-4 pb-3">Sign Up</h4>
+                                                                    <div class="form-group">
+                                                                        <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                                                                        <i class="input-icon uil uil-user"></i>
+                                                                    </div>	
+                                                                    <div class="form-group mt-2">
+                                                                        <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                                        <i class="input-icon uil uil-at"></i>
+                                                                    </div>	
+                                                                    <div class="form-group mt-2">
+                                                                        <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                                        <i class="input-icon uil uil-lock-alt"></i>
+                                                                    </div>
+                                                                    <a href="#" class="btn mt-4">submit</a>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                </div>
+                            </div>
+
+                            <P>
+                                <header>
+                                    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+                                 </header>
+                                 
+                                 <h1>Animation Buttons</h1>
+
+                                    <!-- 行元素 -->
+                                    <div class="row">
+                                        <!-- 列元素 -->
+                                        <div class="col-lg-1" style="background-color: aqua;">1jkhkhkhkhkjhkuhuguygkuygfuyjkbkjbhjgkglugliugliuguigiug</div>
+                                        <div class="col-lg-1" style="background-color: blue;">1</div>
+                                        <div class="col-lg-1" style="background-color: aqua;">1</div>
+                                        <div class="col-lg-1" style="background-color: blue;">1</div>
+                                        <div class="col-lg-1" style="background-color: aqua;">1</div>
+                                        <div class="col-lg-1" style="background-color: blue;">1</div>
+                                        <div class="col-lg-1" style="background-color: aqua;">1</div>
+                                        <div class="col-lg-1" style="background-color: blue;">1</div>
+                                        <div class="col-lg-1" style="background-color: aqua;">1</div>
+                                        <div class="col-lg-1" style="background-color: blue;">1</div>
+                                        <div class="col-lg-1" style="background-color: aqua;">1</div>
+                                        <div class="col-lg-1" style="background-color: blue;">1</div>
+                                    </div>
+
+                                 <div class="frame">
+                                   <button class="custom-btn btn-1">Read More1</button>
+                                   <button class="custom-btn btn-2">Read More2</button>
+                                   <button class="custom-btn btn-3"><span>Read More3</span></button>
+                                   <button class="custom-btn btn-4"><span>Read More4</span></button>
+                                   <button class="custom-btn btn-5"><span>Read More5</span></button>
+                                   <button class="custom-btn btn-6"><span>Read More6</span></button>
+                                   <button class="custom-btn btn-7"><span>Read More7</span></button>
+                                   <button class="custom-btn btn-8"><span>Read More8</span></button>
+                                   <button class="custom-btn btn-9">Read More9</button>
+                                   <button class="custom-btn btn-10">More10</button>
+                                   <button class="custom-btn btn-11">Read More11<div class="dot"></div></button>
+                                   <button class="custom-btn btn-12"><span>Click!</span><span>Read More12</span></button>
+                                   <button class="custom-btn btn-13">Read More13</button>
+                                   <button class="custom-btn btn-14">Read More14</button>
+                                   <button class="custom-btn btn-15">Read More15</button>
+                                   <button class="custom-btn btn-16">Read More16</button>
+                                   <p style="font-family: Andale Mono, monospace;">
+                                     DEERBUCKS.DESIGNING</p>
+                                 </div>
+                                 
+                            </P>
+                            <div class="d-grid col-2 mx-auto">
+                            <button type="button" class="btn btn-secondary btn-lg" style="margin-top: 20px;">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </main>
+
+    <!-- 下面的結束圖標 -->
+
+    <footer class="text-center text-white fixed-bottom" style="background-color: #423266;color: white;font-size: 18px">
+        <!-- Grid container -->
+        <div class="d-flex bd-highlight"
+            style="background-color: #423266;color: white;font-size: 18px;display: flex;text-align: center;">
+
+            <div class="p-2 flex-fill bd-highlight">e-BANK國際商業銀行 Copyright e-BANK International Bank. All Rights
+                Reserved.</div>
+
+            <div class="p-2 flex-fill bd-highlight" style="margin-top: -7px;">
+                <img src="./img/logoNameClose.png" style="width:3%;">©e-BANK國際商業銀行
+            </div>
+        </div>
+        <!-- Grid container -->
+
+      </footer>
+
+
+
+
+    <!-- 客服 -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="KikiRobot" agent-id="470db5ea-968e-42aa-862e-9852b15f0a94"
+        language-code="zh-tw"></df-messenger>
+
+
+
+</body>
+
+</html>

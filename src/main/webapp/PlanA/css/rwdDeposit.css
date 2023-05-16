@@ -1,0 +1,97 @@
+ /* 響應式改變文字 */
+        /* 小於等於 768px 的裝置 */
+        @media (max-width: 768px) {
+            .top-text h2 {font-size: 24px;}
+            .bodybb {font-size: 15px;}
+            .asmall{font-size: 8px;}
+
+            /* 改input框框 */
+            
+            #deMoney,
+            #inaccount,
+            #other {
+                width: 180px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+
+            #outaccount,
+            #paymentAcc{
+                width: 120px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+
+            #period{
+                width: 90px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+        }
+        
+
+        /* 769px 到 992px 的裝置 */
+        @media (min-width: 769px) and (max-width: 992px) {
+            .top-text h2 {font-size: 28px;}
+            .bodybb {font-size: 18px;}
+            .asmall{font-size: 10px;}
+            /* 改input框框 */
+            #deMoney,
+            #inaccount,
+            #other {
+                width: 300px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+
+            #outaccount,
+            #paymentAcc{
+                width: 240px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+
+            #period{
+                width: 120px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+        }
+
+        
+        /* 正常大小 - 大於等於 993px 的裝置 */
+        @media (min-width: 993px) {
+            .top-text h2 {font-size: 32px;}
+            .bodybb {font-size: 23px;}
+            .asmall{font-size: 13px;}
+            /* 改input框框 */
+            #deMoney,
+            #inaccount,
+            #other {
+                width: 500px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+
+            #outaccount,
+            #paymentAcc{
+                width: 300px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+
+            #period{
+                width: 200px;/*更改此值来调整select的宽度*/
+                border-radius: 5px;/*更改此值来调整select的边框弧度*/
+                padding: 3px;/*添加填充以增加select的长度*/
+                margin-top: 10px;
+            }
+        }

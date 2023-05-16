@@ -1,0 +1,54 @@
+/* 改nav的css這邊改 */
+
+/* 頁籤碰到時，返的顏色 */
+.nav-tabs .nav-link:hover {
+    background-color: #130041;
+    color: white;
+    border-radius: 5px;
+}
+
+.dropdown-item:hover{
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(3, 3, 165);
+}
+
+/* 調整漢堡包大小 */
+.navbar-toggler-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* nav平均分散對齊 */
+ul.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 調整漢堡包的下拉式 */
+.dropdown-menu {
+background-color: #f8f9fa;
+border: 1px solid #ced4da;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+font-size: 16px;
+}
+.dropdown-item {
+color: #343a40;
+padding: 0.5rem 1rem;
+}
+/* 下拉式選單內容反色
+.dropdown-item:hover {
+background-color: #f78411;
+} 
+*/
+.dropdown-divider {
+margin: 0.5rem 0;
+border-top: 1px solid #ced4da;
+}
+
+/* 加入漢堡包後，會有pading需改0 */
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}

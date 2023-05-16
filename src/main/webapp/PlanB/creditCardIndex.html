@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- Ver0.8 -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>信用卡首頁</title>
+    <link rel="stylesheet" href="./bootstrap5/css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./css/butybutton.css">
+    <link rel="stylesheet" href="./css/Proflie.css">
+    <!-- 左邊信用卡總覽 -->
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
+    <!-- 右邊輪播圖swiper -->
+    <link rel="stylesheet" href="./css/swiperCarsou.css">
+    <!-- nav的流動背景 -->
+    <link rel="stylesheet" href="./css/bgColorfull.css">
+     <!-- nav的漢堡包等設計 -->
+    <link rel="stylesheet" href="./css/ebanknav.css">
+
+
+    <!-- 我要nav跟body之間相隔100px -->
+    <style>
+        body {
+            margin-top: 100px;
+        }
+        .nav-tabs li {
+            padding: 0 40px;
+            /* 設定頁籤內文字左右間距為 50 像素 */
+        }
+    </style>
+
+<style>
+  /* 滾動條樣式修正開始 */
+  ::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
+/* 在顶部和底部各添加10像素的间隔 */
+::-webkit-scrollbar-track-piece{
+    background: transparent;
+    margin: 10px;
+  } 
+  /* 滾動條結束 */
+</style>
+
+</head>
+
+<body class="text-start"  style="background-image: url(./img/lowPoly03.jpg);background-size: cover;font-family: Helvetica;">
+
+  <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+    <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+    background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+    background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+    background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+    padding-top: 0.1rem;padding-bottom:0.1rem;">
+        <div class="container-fluid">
+            <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+            <a href="#" class="navbar-brand" style="color: white;"></a>
+            
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                        <!-- 回首頁 -->
+                        <div class="col-lg-4">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                            <li class="nav-item d-lg-block d-none">
+                                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                            </li>
+                            </ul>
+                        </div>
+                        <!-- 右邊時間 -->
+                        <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                            <div id="clock" style="font-size: 16px;font-family:Arial;"></div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+                </div>
+            </nav>      
+        </div>
+    </nav>
+
+    
+     <!-- 頁籤 -->
+     <!-- navbar-toggler 類別的元素是漢堡包按鈕。
+     當按下這個按鈕，navbar-collapse 類別的元素會展開。
+     dropdown-menu 類別的元素是下拉式選單。 -->
+
+        <nav class="navbar navbar-expand-lg navbar-light nav-tabs" style="background-color: aliceblue;">
+            <!-- 縮小時有漢堡包 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+              <!-- 下面這行為漢堡包內容 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- 開始ul -->
+                <ul class="navbar-nav" style="font-size: 18px;padding-left: 20px;padding-right: 20px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">台幣存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">台幣轉帳</a></li>
+                            <li><a class="dropdown-item" href="#">換匯</a></li>
+                            <li><a class="dropdown-item" href="#">台幣交易明細</a></li>
+                            <!-- dropdown-item表示按鈕 -->
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">定期存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">查利率</a></li>
+                            <li><a class="dropdown-item" href="#">轉定存</a></li>
+                            <li><a class="dropdown-item" href="#">定存明細</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">外幣存款</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">查匯率</a></li>
+                            <li><a class="dropdown-item" href="#">換匯</a></li>
+                            <li><a class="dropdown-item" href="#">外幣帳戶</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">信用卡</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">帳單資訊</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+</nav>
+
+        <!-- 內容 -->
+
+
+
+
+        <section">
+        <!-- 預留section彈性調整方框 -->
+          <div class="container" style="color: rgb(188, 176, 176) ; border-radius: 20px;color: black;">
+              <div class="row align-items-center justify-content-between" style="background-color: rgba(125, 125, 125, 0);">
+                  <!-- justify-content 属性（水平）对齐弹性容器的项目，当项目不占用主轴上所有可用空间时。 -->
+                  <!-- 左側卡片個人資訊欄 -->
+                  <div class="col-lg-4 py-4">
+                    <!-- col-lg-4左邊占1/3空間 -->
+                    <div class="card" data-state="#about" style="background: #596ecc;
+                    background: -moz-linear-gradient(top, #596ecc 0%, #ffffffdc 100%);
+                    background: -webkit-linear-gradient(top, #596ecc 0%,#ffffffdc 100%);
+                    background: linear-gradient(to bottom, #596ecc 0%,#ffffffdc 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596ecc', endColorstr='#bb84ff',GradientType=0 );box-shadow: 8px 8px 18px rgba(0,0,0,0.4);">
+                      <div class="card-header">
+                        <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
+                        <img class="card-avatar" src="./img/credit001.png" alt="avatar" />
+                        <h1 class="card-fullname">怡邦現金回饋御璽卡</h1>
+                        <!-- <h2 class="card-jobtitle">UI Developer</h2> -->
+                        <!-- 上面打開來可以在E-BANK現金回饋御璽卡下面打字 -->
+                      </div>
+                      <div class="card-content">
+                        <div class="card-subtitle">
+                            <div class="row" style="background-color: #ecececdc;border-radius: 6px;">
+                                <!-- 列元素 -->
+                                <div class="col-lg-6">信用額度:$100,000</div>
+                                <div class="col-lg-6">可用餘額: $86,519</div>
+                            </div>
+                        </div>
+
+
+                        <p class="card-desc my-2">
+                          <div class="row my-3">
+                            <!-- 列元素 -->
+                            <div class="col-lg-6"><strong>繳費截止日:<br>2023/06/22</strong></div>
+                            <div class="col-lg-6 text-nowrap"><strong>本期已繳總金額:<br>$29,891(2023/06/15)</strong></div>
+                        </div>
+                          <div class="row">
+                            <!-- 列元素 -->
+                            <div class="col-lg-6 "><strong>未出帳:$8,468<br>結帳日:07日</strong></div>
+                            <div class="col-lg-6"><strong>即時消費:<br>$325</strong></div>
+                        </div>
+                        </p>
+
+
+                      </div>
+                    </div> 
+                  </div>
+                  <!-- 左邊卡片結束 -->
+
+                      <!-- 右邊開始 -->
+                  <div class="col-xl-8">
+                    <section class="col-xl"> 
+                        <div class="swiper-container">
+                          <div class="swiper-wrapper">
+                            <!-- 第一張 -->
+                            <div class="swiper-slide" style="overflow-y: scroll;overflow-x: hidden;background-color: #e2e2e2b4;box-shadow: 8px 8px 18px rgba(0,0,0,0.4);">
+                              <!-- 增加右邊滾輪上下滑動 -->
+                              <div class="testimonialBox" style="color: black;">
+                                <div class="content" style="margin-top: -70px;">
+                                    <h3 class="px-3"><strong>消費紀錄</strong></h3>
+                                    <div class="row d-flex justify-content-center">
+                                        <!-- 列元素 -->
+                                        <div class="col-lg-2 text-nowrap"><strong>卡別</strong></div>
+                                        <div class="col-lg-3 text-nowrap"><strong>消費日期</strong></div>
+                                        <div class="col-lg-3 text-nowrap"><strong>消費明細</strong></div>
+                                        <div class="col-lg-2 text-nowrap"><strong>消費金額</strong></div>
+                                        <!-- text-nowrap 文字禁止換行 -->
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <!-- 列元素 -->
+                                        <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                        <div class="col-lg-3 text-nowrap">2023/05/10</div>
+                                        <div class="col-lg-3 text-nowrap">KFC-竹北自強</div>
+                                        <div class="col-lg-2 text-nowrap fontfont">$625</div>
+                                        <!-- text-nowrap 文字禁止換行 -->
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                      <!-- 列元素 -->
+                                      <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                      <div class="col-lg-3 text-nowrap">2023/05/12</div>
+                                      <div class="col-lg-3 text-nowrap">FoodPanda</div>
+                                      <div class="col-lg-2 text-nowrap">$293 </div>
+                                      <!-- text-nowrap 文字禁止換行 -->
+                                  </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/14</div>
+                                    <div class="col-lg-3 text-nowrap">好事多台中店</div>
+                                    <div class="col-lg-2 text-nowrap">$5,130 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <!-- 列元素 -->
+                                    <div class="col-lg-2 text-nowrap">御璽卡</div>
+                                    <div class="col-lg-3 text-nowrap">2023/05/15</div>
+                                    <div class="col-lg-3 text-nowrap">富邦momo-EC</div>
+                                    <div class="col-lg-2 text-nowrap">$690 </div>
+                                    <!-- text-nowrap 文字禁止換行 -->
+                                </div>
+
+
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 第二張 -->
+                            <div class="swiper-slide" style="overflow-y: hidden;overflow-x: hidden;background-color: #e2e2e2b4;box-shadow: 8px 8px 18px rgba(0,0,0,0.4);">
+                              <!-- 增加右邊滾輪上下滑動 -->
+                              <div class="testimonialBox" style="color: black;">
+                                <div class="content" style="margin-top: -90px;">
+                                    <p><h3 class="px-2"><strong>信用卡繳費</strong></h3></p>
+                                    <p>本期帳單金額 : $21,851</p>
+                                    <p>本期帳單已繳金額 : $0</p>
+                                    <p>本期帳單繳款截止日： 2023/06/22</p>
+                                    <p><label for="outaccount">轉出帳號：</label>
+                                      <select id="outaccount" name="outaccount">
+                                          <option value="outaccount-1">台幣-0000123456789</option>
+                                          <option value="outaccount-2">美元-0000123456789</option>
+                                      </select></p>
+                                    <p>付款金額 : 
+                                      <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                                      <label class="btn btn-success" for="option1">本期全部應繳金額</label>
+
+                                      <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                                      <label class="btn btn-success" for="option2">本期最低應繳金額</label>
+
+                                      <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                                      <label class="btn btn-success" for="option3">自行輸入金額</label>
+                                      <br>
+                                      &emsp;&emsp;&emsp;&emsp;&emsp;這邊顯示按下去金額</p>
+                                        
+                                </div>
+                                <div class="d-flex justify-content-center"><button type="button" class="custom-btn btn-2 btn-lg" style="margin-top: -10px;">繳費</button>
+                                  <button type="button" class="custom-btn btn-2 btn-lg" style="margin-top: -10px;width: 150px;">歷史繳費紀錄</button></div>
+
+                              </div>
+                            </div>
+                            <!-- 第三張 -->
+                            <div class="swiper-slide" style="overflow-y: hidden;overflow-x: hidden;background-color:#e2e2e2b4;box-shadow: 8px 8px 18px rgba(0,0,0,0.4);">
+                              <!-- 增加右邊滾輪上下滑動 -->
+                              <div class="testimonialBox" style="color: black;">
+                                <div class="content" style="margin-top: -80px;">
+                                  <h3 class="p-2"><strong>信用卡歷史帳單</strong></h3>
+                                  <div class="row d-flex justify-content-center">
+                                      <!-- 列元素 -->
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">月份</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">應繳總金額</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">最低應繳總額</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">結帳日</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">明細</div>
+                                      <!-- text-nowrap 文字禁止換行 -->
+                                  </div>
+                                  <div class="row d-flex justify-content-center">
+                                      <!-- 列元素 -->
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">2023/1月</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">$15,322</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">$1,922</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">1/22</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">
+                                        <button class="custom-btn btn-1 my-1" style="margin: 0;padding: 0;width: 65px;height: 35px;">明細</button>
+                                      </div>
+                                      <!-- text-nowrap 文字禁止換行 -->
+                                  </div>                                   
+                                  <div class="row d-flex justify-content-center">
+                                      <!-- 列元素 -->
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">2023/2月</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">$5,882</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">$722</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">2/22</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">
+                                        <button class="custom-btn btn-1 my-1" style="margin: 0;padding: 0;width: 65px;height: 35px;">明細</button>
+                                      </div>
+                                      <!-- text-nowrap 文字禁止換行 -->
+                                  </div>                                   
+                                  <div class="row d-flex justify-content-center">
+                                      <!-- 列元素 -->
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">2023/3月</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">$11,722</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">$1,022</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">3/22</div>
+                                      <div class="col-lg-2 text-nowrap" style="display: flex;justify-content: center;align-items: center;">
+                                        <button class="custom-btn btn-1 my-1" style="margin: 0;padding: 0;width: 65px;height: 35px;">明細</button>
+                                      </div>
+                                      <!-- text-nowrap 文字禁止換行 -->
+                                  </div>                                   
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 第三張結束 -->
+                          </div>
+                        </div>
+                      </section>
+                      <script src="./swiper/swiper-bundle.min.js"></script>
+                      <script>
+                         var swiper = new Swiper('.swiper-container', {
+                          effect: 'coverflow',
+                          grabCursor: true,
+                          centeredSlides: true,
+                          slidesPerView: 'auto',
+                          coverflowEffect: {
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 2,
+                            // 左右卡片後退程度
+                            slideShadows: true,
+                          },
+                          loop:false,
+                        })
+                   
+                      </script>
+
+
+
+                  </div>
+                  <!-- 右邊結束 -->
+              </div>
+          </div>
+      </section>
+
+
+
+
+
+
+
+
+
+    <!-- 下面的結束圖標 -->
+    <footer class="text-center text-white fixed-bottom" style="color: white;font-size: 18px;">
+      <!-- Grid container -->
+      <div class="d-flex bd-highlight yeee"
+          style="color: white;font-size: 18px;display: flex;text-align: center;">
+
+          <div class="p-2 flex-fill bd-highlight  d-lg-block d-none">e-BANK國際商業銀行 Copyright e-Bank International Bank. All Rights
+              Reserved.</div>
+
+          <div class="p-2 flex-fill bd-highlight">
+              <img src="./img/cloudyLogoMINI.png" style="width:5%;"><strong> &nbsp;©e-BANK國際商業銀行</strong>
+          </div>
+      </div>
+      <!-- Grid container -->
+  </footer>
+
+    <!-- 客服 -->
+    <!-- <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="KikiRobot" agent-id="470db5ea-968e-42aa-862e-9852b15f0a94"
+        language-code="zh-tw"></df-messenger> -->
+
+
+<script src="./js/profile.js"></script>
+<script src="./js/time.js"></script>
+</body>
+
+</html>
+
+<!-- 1.右側繳費scroll bar 美化 現在很醜 -->
+<!-- 2.全部文字的padding去掉背景色塊後再調整。 -->

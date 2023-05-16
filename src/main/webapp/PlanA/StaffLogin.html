@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>員工登入</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/ebanknav.css"> <!-- nav的漢堡包等設計 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/time.js" defer></script> <!-- 右上角時鐘 -->
+
+
+
+    <style>
+        .carousel-container {
+            /* margin-top: 20px; */
+            position: relative;
+            z-index: -1;
+        }
+
+        .loo {
+            position: absolute;
+            z-index: 0;
+            top: 30px;
+            left: 0;
+            width: 80%;
+            height: 80%;
+        }
+
+        .loginbu {
+            /* background-color: #9e79f3; */
+            /* color: #e7e5ec; */
+            margin: 0 auto;/* 將按鈕置中 */
+            display: block;
+            width: 200px;
+            border: none;/*無邊框*/
+            border-radius: 5px;/*5px 圓角*/
+            padding: 5px 5px;
+        }
+    </style>
+
+</head>
+
+<body style="font-family: Helvetica; font-size: 18px;">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+        background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+        background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+        background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+        padding-top: 0.1rem;padding-bottom:0.1rem;">
+            <div class="container-fluid">
+                <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+                <a href="#" class="navbar-brand" style="color: white;"></a>
+                
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                            <!-- 回首頁 -->
+                            <div class="col-lg-4">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                                <li class="nav-item d-lg-block d-none">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- 右邊時間 -->
+                            <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                                <div id="clock" style="font-size: 16px;"></div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    </div>
+                </nav>      
+            </div>
+    </nav>
+
+
+    <section class="loo" >
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 ml-2">
+                    <div class="card" style="margin-left: 30px;">
+                        <div class="card-header" style="text-align: center;">
+                            <h4>員工登入</h4>
+                        </div>
+                        <form style="background-color: rgba(255, 252, 253, 0.7);">
+                            <br>
+
+                            <div class="mb-3" style="padding-left: 25px;padding-right: 25px;">
+                                <label class="form-label" for="employeeID">
+                                    <h4>員工編號</h4>
+                                </label>
+                                <input class="form-control" type="text" id="employeeID" name="employeeID">
+                            </div>
+
+
+                            <div class="mb-3" style="padding-left: 25px;padding-right: 25px;">
+                                <label class="form-label" for="password">
+                                    <h4>密碼</h4>
+                                </label>
+                                <input class="form-control" type="password" id="password" name="password">
+                            </div>
+
+
+                            <div class="mb-3" style="padding-left: 25px;padding-right: 25px;">
+                                <label class="form-label" for="code">
+                                    <h4>驗證碼 </h4>
+                                </label>
+                                <div style="display: flex; align-items: center;">
+                                    <input class="form-control" type="text" name="code" style="width: 150px;">
+                                    <img src="./img/驗證碼.jpeg" style="margin-left: 20px;">
+                                </div>
+                            </div>
+
+                            <!-- 登入失敗放這邊 -->
+                            <div style="text-align: center;">
+                                <span style="color: rgb(228, 14, 14);"> </span>
+                            </div>
+
+                            <div style="display: flex; justify-content: center;">
+                            <input class="btn btn-primary d-block btn-user w-50" type="submit" value="登入" onclick="login(event)">
+                            </div>
+                            <br>
+                            <!-- <div class="text-center" style="font-size: 18px;"><a class="small" href="./StaffForgotPassword.html">忘記密碼</a></div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 換燈片 -->
+    <div class="carousel-container">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/員工登入2 (2).jpg" class="d-block w-100" style="height: 500px">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/幻燈 5 (3).jpg" class="d-block w-100" style="height: 500px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center fixed-bottom">
+        <div class="container text-muted py-4 py-lg-5">
+            <ul class="list-inline">
+                <li class="list-inline-item me-3"><strong>關於e-Bank</strong></li>
+                <li class="list-inline-item me-3">l</li>
+                <li class="list-inline-item me-3"><strong>e-Bank APP</strong></li>
+                <li class="list-inline-item me-3">l</li>
+                <li class="list-inline-item me-3"><strong>聯繫客服</strong></li>
+            </ul>
+            <strong> &nbsp;©e-BANK國際商業銀行</strong>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+function login(event){
+	event.preventDefault();
+	const xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		  if (xhr.readyState === 4 && xhr.status === 200) {
+		    const responseText = xhr.responseText.trim(); // 獲取JSP返回的數據
+		    if(responseText == 'success'){
+		    	window.location.href = "/MavenWeb/PlanA/StaffHome.html";
+		    }
+		    else{
+		    	document.getElementById('loginIsSuccess').innerText = "登入失敗";
+		    	document.getElementById('loginIsSuccess').style.color = "red";
+		    	document.getElementById('loginIsSuccess').style.fontSize = "20px";
+		    }
+		  }else{
+		  		document.getElementById('loginIsSuccess').innerText = "登入失敗";
+		    	document.getElementById('loginIsSuccess').style.color = "red";
+		    	document.getElementById('loginIsSuccess').style.fontSize = "20px";
+		  }
+	}
+	xhr.open('POST', 'http://localhost:7070/MavenWeb/jsp/staffLogin.jsp?');
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	
+	var IDNumber = 'empID=' + document.getElementById('employeeID').value +"&";
+	var password = 'password=' + document.getElementById('password').value;
+	xhr.send(IDNumber+password);
+}
+</script>

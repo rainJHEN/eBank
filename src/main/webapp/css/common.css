@@ -1,0 +1,210 @@
+/*头部CSS开始*/
+.index_header{
+	height: 30px;
+	width: 100%;
+	line-height: 26px;
+	font-size: 14px;
+	font-family:'Microsoft Yahei', '微软雅黑';
+	background-color: #f3f3f3;
+	border-top:1px solid #e4e4e4;
+	border-bottom:1px solid #e4e4e4;
+	color: #6d6d6d;
+}
+.on{
+	color: #ff8400;
+}
+a{
+	color: #242933;
+}
+body{
+	font-family:'Microsoft Yahei', '微软雅黑';
+}
+.header_wrap{
+	margin: 0 auto;
+	width: 1200px;
+}
+.header_left{
+	float: left;
+	margin-left: 30px;
+}
+.index_header a {
+    color: #646262;
+    text-decoration: none;
+}
+.index_header a:hover{
+	color: #ff3414;
+}
+.index_header .alink{
+	margin-right: 20px;
+}
+.header_phone{
+	font-size: 14px;
+	color: #6d6d6d;
+}
+.header_phone a:hover{
+	color: #6d6d6d;
+}
+.header_phone_number{
+	margin-left: 12px;
+}
+.header_moblie{
+	margin: 0 6px 0 36px;
+}
+.user_info{
+	float: right;
+}
+.user_phone{
+	margin-right: 22px;
+}
+.user_info .help_center{
+	padding-left: 24px;
+	border-left: 1px solid #bebebe;
+	margin-right: 0;
+}
+.user_info .follow_us{
+	padding-left: 0px;
+	margin-right: 24px;
+}
+/*头部CSS结束*/
+/*导航栏开始*/
+.menu_list{
+	height: 110px;
+	background-color: #fff;
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+}
+.menu_list_info{
+	margin: 0 auto;
+	width: 1200px;
+	height: 100%;
+	line-height: 110px;
+}
+ul{
+	margin:0;
+	padding: 0;
+	display: inline-block;
+	overflow: hidden;
+	list-style: none;
+}
+.menu_list_info li{
+	float: left;
+	list-style: none;
+	margin-left: 80px;
+	font-size: 16px;
+}
+.menu_list_info .menu_list_info_logo{
+	margin-left:0;
+}
+/*导航栏结束*/
+/*底部栏开始*/
+.down_footer{
+	height: 322px;
+	width: 100%;
+	background-color: #0a131c;
+}
+.footer_content_top{
+	width: 100%;
+	height: 178px;
+	border-bottom: 1px solid #4e4f55; 
+}
+.footer_content_top_block{
+	width: 1200px;
+	height: 178px;
+	margin: 0 auto;
+}
+.find_us{
+	display: inline-block;
+	position: relative;
+	height: 178px;
+}
+.find_us_p{
+	padding: 34px 0 0 20px;
+	color: #9fa4ac;
+	font-size: 18px;
+}
+.find_us_mail,.find_us_phone,.find_us_address{
+	padding: 24px 20px 0px ;
+}
+.find_us_mail span,.find_us_phone span{
+	color: #9fa4ac;
+	font-size: 16px;
+}
+address{
+	margin:0;
+	display: inline-block;
+	color: #9fa4ac;
+	font-size: 16px;
+}
+.about_us{
+	float: right;
+    position: relative;
+    height: 178px;
+    width: 570px;	
+}
+.about_us_p{
+	padding: 34px 0 0 0;
+	color: #9fa4ac;
+	font-size: 18px;
+}
+.about_us_content_ul{
+	width: 100%;
+	list-style: none;
+}
+.about_us_content{
+	float: left;
+	width: 70px;
+}
+.about_us_content a,.about_us_content_xiazai a,.about_us_content_xiazai_ios a{
+	color: #9fa4ac;
+}
+.xiazai{
+	margin-top: 28px;
+}
+.about_us_content_xiazai_ios{
+	float: left;
+	margin-left: 10px;
+	width: 60px;
+}
+.about_us_content_xiazai{
+	float: left;
+	margin-left: 10px;
+	width: 80px;
+}
+.about_us_content_xiazai img,.about_us_content_xiazai_ios img{
+	width: 20px;
+	margin-top: -4px;
+}
+.footer_content_bottom{
+	width: 100%;
+	height: 140px;
+}
+.footer_content_bottom_aera{
+	width: 1200px;
+    height: 140px;
+    margin: 0 auto;
+}
+.footer_content_bottom_look{
+	margin:0 0 0 400px;
+	width: 230px;
+	height: 140px;
+}
+.footer_content_bottom_content,.footer_content_bottom_content1{
+	color: #9fa4ac;
+	position: relative;
+	top: 16px;
+	font-size: 18px;
+}
+.footer_content_bottom_ul{
+	width: 100%;
+	position: relative;
+	top: 36px;
+	left: 20px;
+}
+.footer_content_bottom_content1{
+	float: right;
+}
+.footer_content_bottom_img{
+	float: left;
+	margin-right: 20px;
+}
+/*底部栏结束*/

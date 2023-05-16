@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>客服系統</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./bootstrap5/css/bootstrap.min.css">
+        <!-- nav的流動背景 -->
+    <link rel="stylesheet" href="./css/ebanknav.css"> <!-- nav的漢堡包等設計 -->
+    <link rel="stylesheet" href="./css/bgColorfull.css">
+
+    <style>
+        body {
+            margin-top: 100px;
+        }
+    </style>
+
+<!-- 右側客服 -->
+    <style>
+        #containerE {
+        width: 400px;
+        height: 400px;
+        background-color: #d1d1d1;;
+        border: 1px solid rgba(0, 136, 68, 0.5);
+        overflow-y: scroll;
+        }
+        .message {
+        background-color: #f2f2f2;
+        width: 375px;
+        border-radius: 5px;
+        padding: 10px;
+        }
+        .message.mine {
+        background-color: #4CAF50;color: white;
+        }
+        .message.other {
+        background-color: #ffffff;
+        }
+        .message.staff {
+        background-color: #313131;
+        color: white;
+        display: flex;
+        justify-content: end;
+        }
+        .message input[type=text] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        border: none;
+        border-top: 1px solid #ffffff;
+        }
+    </style>
+<!-- 右側客服 -->
+
+<style>
+  /* 滾動條樣式修正開始 */
+  ::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
+/* 在顶部和底部各添加10像素的间隔 */
+::-webkit-scrollbar-track-piece{
+    background: transparent;
+    margin: 10px;
+  } 
+  /* 滾動條結束 */
+</style>
+
+
+</head>
+
+<body class="text-start" style="overflow-x: hidden;font-family: Helvetica;font-size: 18px;"> <!-- 更改全部字型 -->  
+
+  <nav class="fixed-top"> <!--此是為了這裡面置頂 -->
+
+    <!-- 上面的navbr --> <!-- py-1更改navbar上下寬度 -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #130041;
+    background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+    background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+    background: linear-gradient(to right, #130041  0%,#130041 22%,#8d81a5 67%);
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#e7e5ec',GradientType=1 );
+    padding-top: 0.1rem;padding-bottom:0.1rem;">
+        <div class="container-fluid">
+            <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+            <a href="#" class="navbar-brand" style="color: white;"></a>
+            
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                        <!-- 回首頁 -->
+                        <div class="col-lg-4">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                            <li class="nav-item d-lg-block d-none">
+                                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white"><strong>回首頁</strong></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="#" style="margin-right: 0px;color: white;margin-right: 50px;"><strong>登出</strong></a>
+                            </li>
+                            </ul>
+                        </div>
+                        <!-- 右邊時間 -->
+                        <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                            <div id="clock" style="font-size: 16px;"></div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+                </div>
+            </nav>      
+        </div>
+    </nav>
+
+
+    <!-- 頁籤 -->
+    <ul class="nav nav-tabs" style="background-color: aliceblue; font-size: 18px;">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">首頁</a>
+            <!-- <a class="nav-link active" aria-current="page" href="#">首頁</a> -->
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">個人資料</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./StaffChangePw.html">密碼修改</a></li>
+                <li><a class="dropdown-item" href="#">假單填寫</a></li>
+                <li><a class="dropdown-item" href="#">打卡紀錄</a></li>
+                <li><a class="dropdown-item" href="#">出缺勤紀錄</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">客戶服務</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">客服中心</a></li>
+                <li><a class="dropdown-item" href="#">查詢交易明細</a></li>
+                <li><a class="dropdown-item" href="#">開戶專區</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">公告</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- 圖片切換 -->
+<br>
+
+<h2 class="px-4">客服系統</h2>
+
+
+
+
+<div class="row">
+  <!-- 列元素 -->
+  <div class="col-lg-1" style="visibility: hidden;">隱藏</div>
+<!-- 左邊傳統信箱 -->
+  <div class="col-lg-4" style="background-color: rgba(0, 170, 170, 0.452);border-style: groove;height: 450px;border-radius: 15px;">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">未回覆信件</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">已回覆信件</a>
+      </li>
+    </ul>
+    <!-- 下面列表清單 -->
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" style="font-size: 22px;"><strong>group item heading</strong></h5>
+          <small>3 days ago</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small>And some small print.</small>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" style="font-size: 22px;"><strong>group item heading</strong></h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small class="text-muted">And some muted small print.</small>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" style="font-size: 22px;"><strong>group item heading</strong></h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small class="text-muted">And some muted small print.</small>
+      </a>
+    </div>
+    <!-- 清單結束 -->
+  </div>
+<!-- 左邊傳統信箱end -->
+
+  <div class="col-lg-1" style="visibility: hidden;">隱藏</div>
+
+  <!-- 右邊對話式客服START -->
+  <div class="col-lg-2 p-0" style="background-color: rgba(0, 145, 84, 0.438);border-radius: 15px;height: 460px;">
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex justify-content-between align-items-start" style="background-color: #ff8d8d8c;">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">王小狗</div>
+          我有問題，我要怎麼匯款?
+        </div>
+        <span class="badge bg-primary rounded-pill"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start" style="background-color: #ff8d8d8c;">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">陳阿姨</div>
+          我有問題，我要幹嘛?
+        </div>
+        <span class="badge bg-primary rounded-pill">7</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start" style="background-color: #ff8d8d8c;">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">張先生</div>
+          我匯款有問題
+        </div>
+        <span class="badge bg-primary rounded-pill">2</span>
+      </li>
+    </ol>
+  </div>
+  <!-- 右邊即時客服左側LIST結束 -->
+  <div class="col-lg-4 p-0">
+    <div id="containerE" style="overflow-x: hidden;border-color:rgba(65, 63, 63, 0.842);border-style:solid;border-width:5px; border-radius: 5px;">
+      <div class="message other">
+        <p>我有問題，我要怎麼匯款?</p>
+      </div>
+      <div class="message staff">
+        <p>我不知道，還是您要辦理信用卡?</p>
+      </div>
+    </div>
+    <div class="message mine" style="background-color: rgba(44, 44, 44, 0.438);color: white;width: 400px;">
+      <input type="text" placeholder="請輸入訊息...">
+    </div>
+    <script>
+      let input = document.querySelector('.message.mine input[type=text]');
+      input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          let containerE = document.querySelector('#containerE');
+          let message = document.createElement('div');
+          message.classList.add('message', 'mine');
+          let content = document.createElement('p');
+          content.innerText = input.value;
+          message.appendChild(content);
+          containerE.appendChild(message);
+          input.value = '';
+        }
+      });
+    </script>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- 下面的結束圖標 -->
+    <footer class="text-center text-white fixed-bottom" style="color: white;font-size: 18px;">
+      <!-- Grid container -->
+      <div class="d-flex bd-highlight yeee"
+          style="color: white;font-size: 18px;display: flex;text-align: center;">
+
+          <div class="p-2 flex-fill bd-highlight  d-lg-block d-none">e-BANK國際商業銀行 Copyright e-Bank International Bank. All Rights
+              Reserved.</div>
+
+          <div class="p-2 flex-fill bd-highlight">
+              <img src="./img/cloudyLogoMINI.png" style="width:5%;"><strong> &nbsp;©e-BANK國際商業銀行</strong>
+          </div>
+      </div>
+      <!-- Grid container -->
+  </footer>
+
+
+    <script src="./bootstrap5/js/bootstrap.min.js"></script>
+    <script src="./js/time.js"></script>
+</body>
+
+</html>

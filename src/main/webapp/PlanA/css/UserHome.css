@@ -1,0 +1,61 @@
+body {
+    margin-top: 100px;
+}
+
+/* 頁籤碰到時，返的顏色 */
+.nav-tabs .nav-link:hover {
+    background-color: #e9ecef;
+}
+
+.nav-tabs li {
+    padding: 0 40px;
+    /* 設定頁籤內文字左右間距為 50 像素 */
+}
+
+/* 靠左、靠右 */
+.left {
+    float: left;
+    margin-left: 20px;
+}
+
+.right {
+    float: right;
+    margin-right: 20px;
+}
+
+/* 新聞 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination .page-link span {
+    display: block;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: #e5ebf5; 
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+
+.header:hover {
+    box-shadow: 0px 0px 6px rgb(231, 11, 11);
+    transition: background-color 0.3s;
+}
+
+
+.main-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+

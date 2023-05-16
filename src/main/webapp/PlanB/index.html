@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- Ver0.8 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no>
+    <title>e-BANK首頁</title>
+    <link href="./img/cloudyLogoMINI.png" rel="icon">
+    <link rel="stylesheet" href="./bootstrap5/css/bootstrap.minFeng.css">
+    <link rel="stylesheet" href="./css/style_tool02.css">
+    <link rel="stylesheet" href="./css/footerIcon/ionicons.min.css">
+    <link rel="stylesheet" href="./css/butybutton.css">
+        <!-- nav的流動背景 -->
+    <link rel="stylesheet" href="./css/bgColorfull.css">
+    <!-- nav css -->
+    <link rel="stylesheet" href="./css/ebanknav.css">
+    <!-- 智慧客`服 -->
+    <script src="https://kit.fontawesome.com/d8bd919f93.js" crossorigin="anonymous"></script>
+
+    
+    <style>
+        /* 滾動條樣式修正開始 */
+        ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+      background-color: transparent;
+      }
+      /* 在顶部和底部各添加10像素的间隔 */
+      ::-webkit-scrollbar-track-piece{
+          background: transparent;
+          margin: 5px;
+        } 
+        /* 滾動條結束 */
+      </style>
+
+
+    <!-- 智慧客服 -->
+    <style>
+    .open-button {
+      padding:10px 40px;
+      background-color: #7b7b7b;
+      color: white;
+      font-size:18px;
+      max-width:300px;
+      border-radius:20px;
+      border: none;
+      cursor: pointer;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;  
+    }
+    
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      z-index: 9;
+     
+    }
+    
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      border-radius:20px;
+      background-color: white;
+      color:#777;
+    }
+    
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      border-radius:20px;
+      background: #ddd;
+      resize: none;
+      min-height: 200px;
+      color:#777;
+    }
+    
+    .form-container textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+       font-size:17px;
+      padding: 10px 20px;
+      border: none;
+      border-radius:20px;
+      cursor: pointer;
+      width: 80%;
+      margin-bottom:10px;
+    }
+    
+    .form-container .cancel {
+      background-color: #1974D2;
+    }
+    
+    .form-container .btn:hover, .open-button:hover {
+    opacity: 0.8;
+    }
+    </style>
+
+
+
+</head>
+<body style="background-image: url(./img/lowPoly05.jpg);background-size: cover;font-family: Helvetica;font-size: 18px;">
+    <!-- 整個背景的顏色 -->
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #130041;
+background: -moz-linear-gradient(left, #130041 0%, #130041 22%, #8d81a5 67%);
+background: -webkit-linear-gradient(left, #130041 0%,#130041 22%,#8d81a5 67%);
+background: linear-gradient(to right, #130041 0%,#130041 22%,#8d81a5 67%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130041', endColorstr='#8d81a5',GradientType=1 );  padding-top: 0.1rem;padding-bottom:0.1rem;">
+        <div class="container-fluid">
+            <img src="./img/cloudyLogo.png" alt="" style="width:130px;margin-right:20px;margin-left: 30px;">
+            <a href="#" class="navbar-brand" style="color: white;"></a>
+            
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- align-items-center 是為了讓回首頁跟時間對齊 -->
+                        <!-- 回首頁 -->
+                        <div class="col-lg-4">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="white-space:nowrap;">
+                            <li class="nav-item d-lg-block d-none">
+                                <a class="nav-link active d-flex justify-content-end" aria-current="page" href="http://localhost:8080/MavenWeb/PlanA/UserLogin.html" style="margin-right: 0px;color: white"><strong>個人金融 </strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" onmouseover="showDropdown()" style="color: white;">
+                                    <strong>登入</strong>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" onmouseout="hideDropdown()">
+                                    <li><a class="dropdown-item" href="http://localhost:8080/MavenWeb/PlanA/UserLogin.html">客戶登入</a></li>
+                                    <li><a class="dropdown-item" href="http://localhost:8080/MavenWeb/PlanA/StaffLogin.html">員工登入</a></li>
+                                </ul>
+                            </li>
+
+                            <script>
+                                function showDropdown() {
+                                    document.querySelector('.dropdown-menu').classList.add('show');
+                                }
+                                
+                                function hideDropdown() {
+                                    setTimeout(function() {
+                                     document.querySelector('.dropdown-menu').classList.remove('show');
+                                     }, 1000);
+                                    }
+                                    // 滑鼠移下去下拉選單消失，所以增加延遲500毫秒消失。
+                                </script>
+                                
+                            </ul>
+                        </div>
+                        <!-- 間隔用 start -->
+                        <div class="col-lg-1 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;visibility: hidden;"></div>
+                        <!-- 間隔用 end -->
+                         <!-- 右邊時間 -->
+                        <div class="col-lg-4 d-lg-block d-none" style=" white-space:nowrap;display: flex;align-items: center;">
+                            <div id="clock" style="font-size: 16px;"></div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+                </div>
+            </nav>      
+        </div>
+    </nav>
+
+
+    <!-- 要讓幻燈片動起來可以使用 data-bs-ride 預設是五秒變換一次，若需要有滑動效果可以在最外面加個slide。 -->
+<!-- carousel-fade可更改違漸變，取消就正常輪播 -->
+<div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" style="margin-top: 43px;">
+    <!-- ol給輪播圖添加切換鍵、indicators指針 -->
+    <ol class="carousel-indicators">
+      <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+  
+        <!-- 表明這是第一個輪播圖 -->
+        <div class="carousel-item active" data-bs-interval="2000">
+          <!-- data-bs-interval="2000" 2秒換下一張 -->
+          <div class="overlay-image" style="background-image: url(./img/sinopac102waifu2x.png);"></div>
+          <!-- overlay-image輪播圖的不透明度 -->
+            <div class="container" id="carouselContainer">
+                <P><h1><strong>怡邦現金回饋御璽卡</strong></h1></P>
+                <p><h3>優惠好禮送不完</h3></p>
+                <a href="#" class="custom-btn btn-1" style="font-size: 20px;height: 45px;text-decoration:none;">瞭解更多</a>
+            </div>    
+        </div>
+        <!-- 這是第二個輪播圖 -->
+        <div class="carousel-item" data-bs-interval="2000">
+          <div class="overlay-image" style="background-image: url(./img/carousel002.jpg);"></div>
+          <div class="container" id="carouselContainer">
+              <P><h1><strong>數位信貸好禮到</strong></h1></P>
+              <p><h3>遇兔則發貸你有錢花</h3></p>
+              <a href="#" class="custom-btn btn-1" style="font-size: 20px;height: 45px;text-decoration:none;">瞭解更多</a>
+          </div>    
+      </div>
+      <!-- 這是第三個輪播圖 -->
+      <div class="carousel-item" data-bs-interval="2000">
+        <div class="overlay-image" style="background-image: url(./img/sinopac001waifu2x.png);"></div>
+        <div class="container" id="carouselContainer">
+            <P><h1><strong>雙幣定存限時優惠</strong></h1></P>
+            <p><h3>美元6個月定存年利率最高4.88%</h3></p>
+            <a href="#" class="custom-btn btn-1" style="font-size: 20px;height: 45px;text-decoration:none;">瞭解更多</a>
+        </div>    
+    </div>
+    </div>
+    <!-- 使用role屬性告訴輔助裝置(如螢幕閱讀器)這個元素所扮演的角色,例如點選的按鈕,就是role="button" -->
+        <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+        <span class="sr-only"></span>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+        <span class="sr-only"></span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+  </div>
+
+  <section style="margin-top: 50px;">
+    <!-- padding -->
+    <div class="container p-2" style="color: white ; border-radius: 20px; background:linear-gradient( hsl(230, 48%, 44%), #764398);box-shadow: 8px 8px 18px rgba(0,0,0,0.4);">
+        <div class="row justify-content-between">
+            <!-- ustify-content 属性（水平）对齐弹性容器的项目，当项目不占用主轴上所有可用空间时。 -->
+            <div class="col-md p-3" >
+                <img src="./img/citysky.gif" alt="1" class="img-fluid p-3" style="border-radius: 30px;">
+            </div>
+                <!-- .img-fluid 設定為響應式圖片。運用 max-width: 100%; 和 height: auto;，讓圖片可依父元素進行縮放 -->
+            <div class="col-md pt-3">
+                <p><h2>透析國際趨勢，接軌市場脈動<br>e-BANK助您搶先佈局，步步為贏！</h2></p>
+                <P class="lead p-1">
+                    <h4>e-BANK提供您多元的海外股市資訊，讓您在投資時<br>能有更即時且專業的選擇，即刻啟程您在e-BANK的<br>一流投資體驗，對抗通膨來襲，升息浪潮下的投資<br>機會，跟上未來商機！
+                    </h4></P>
+                <a href="#" class="btn btn-info">瞭解更多</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section>
+        <div class="container d-md-block d-none">
+            <div class="row my-4" style="padding-left: 40px">
+                <!-- Gap 響應式間隔 中間三張卡片-->
+                <div class="col-xl">
+                    <div class="card" style="border-radius: 20px;background-image: url(./img/0416001-02.jpeg);background-size:cover;opacity:0.9;box-shadow: 8px 8px 18px rgba(0,0,0,0.4);" id="tripleContainer">
+                        <div class="card-body text-center">
+                            <div class="card-title">
+                                <h4><strong>即時資訊</strong></h4>
+                            </div>
+                            <div class="card-text" style="text-align:center;">
+                                <p><h5><strong>2023 年 4 月 1 日，e-BANK宣布計劃於 2023 年 5 月 3 日上午 7:30 發布新聞稿，公佈其 2023 年第一季度財務業績等。該新聞稿也將在公司網站。</strong></h5></p>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-5">詳細資訊</a>
+                            <!-- margin-top 間隔 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="card" style="border-radius: 20px;background-image: url(./img/0416001-02.jpeg);background-size:cover;opacity:0.9;box-shadow: 8px 8px 18px rgba(0,0,0,0.4);" id="tripleContainer">
+                        <div class="card-body text-center">
+                            <div class="card-title">
+                                <h4><strong>即時匯率</strong></h4>
+                            </div>
+                            <table class="table table-striped" style="border:none;margin-top: 20px;">
+                                  <tr>
+                                    <th>貨幣</th>
+                                    <th>匯率(TWD)</th>
+                                  </tr>
+                                  <tr>
+                                    <td>美金</td>
+                                    <td id="usd"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>歐元</td>
+                                    <td id="eur"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>日圓</td>
+                                    <td id="jpy"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>韓元</td>
+                                    <td id="krw"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>澳幣</td>
+                                    <td id="aud"></td>
+                                  </tr>
+                                  
+                              </table>
+                              <script>
+                                // 定義匯率清單
+                                var rates = {
+                                  "USD": 0.034,
+                                  "EUR": 0.029,
+                                  "JPY": 3.71,
+                                  "KRW": 39.77,
+                                  "AUD": 0.049,
+                                };
+                          
+                                // 計算各匯率與 TWD 的匯率
+                                var twd = 1;
+                                var usd = twd / rates["USD"];
+                                var eur = twd / rates["EUR"];
+                                var jpy = twd / rates["JPY"];
+                                var krw = twd / rates["KRW"];
+                                var aud = twd / rates["AUD"];
+                          
+                                // 顯示匯率
+                                document.getElementById("usd").innerHTML = usd.toFixed(2);
+                                document.getElementById("eur").innerHTML = eur.toFixed(2);
+                                document.getElementById("jpy").innerHTML = jpy.toFixed(2);
+                                document.getElementById("krw").innerHTML = krw.toFixed(2);
+                                document.getElementById("aud").innerHTML = aud.toFixed(2);
+                              </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="card" style="border-radius: 20px;background-image: url(./img/0416001-02.jpeg);background-size:cover;opacity:0.9;box-shadow: 8px 8px 18px rgba(0,0,0,0.4);" id="tripleContainer">
+                        <div class="card-body text-center">
+                            <div class="card-title">
+                                <h4><strong>快捷功能區</strong></h4>
+                            </div>
+                            <div class="button-container">
+                                <button id="six6button"><img src="./img/miniicon001.png" alt="" style="width: 70%;"><br> <strong>線上開戶</strong></button>
+                                <button id="six6button"><img src="./img/miniicon002.png" alt="" style="width: 70%;"><br><strong>最新消息</strong></button>
+                                <button id="six6button"><img src="./img/miniicon003.png" alt="" style="width: 70%;"><br><strong>信用卡資訊</strong></button>
+                                <button id="six6button"><img src="./img/miniicon004.png" alt="" style="width: 70%;"><br><strong>我的帳戶</strong></button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="p-3">
+        <!-- padding -->
+        <div class="container bg-light shadow" style="background-image: url(./img/containerbg01.jpg);background-repeat: no-repeat;; border-radius: 30px;margin-bottom: 15px;">
+            <div class="row align-items-center justify-content-between ">
+                <!-- ustify-content 属性（水平）对齐弹性容器的项目，当项目不占用主轴上所有可用空间时。 -->
+                    <!-- .img-fluid 設定為響應式圖片。運用 max-width: 100%; 和 height: auto;，讓圖片可依父元素進行縮放 -->
+                <div class="col-md">
+                    <div class="container low-container" style=" padding: 150px;color: white;">
+                            <p><h1>一起加入e-BANK銀行</h1></p>
+                            <p><h1>幫助開創新時代</h1></p>
+                            <br>
+                            <a href="#" class="btn btn-info low-container-button" style="position: relative;">查看更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="p-3" style="margin-bottom: 30px;">
+        <!-- padding -->
+        <div class="container text-light shadow" style="background:linear-gradient( hsl(204, 71%, 40%), #410566); border-radius: 30px;">
+            <div class="row align-items-center justify-content-between d-flex">
+                <!-- ustify-content 属性（水平）对齐弹性容器的项目，当项目不占用主轴上所有可用空间时。 -->
+                    <!-- .img-fluid 設定為響應式圖片。運用 max-width: 100%; 和 height: auto;，讓圖片可依父元素進行縮放 -->
+                <div class="col-md" style="padding-left: 120px;">
+                    <h1 style="padding-bottom: 20px;">掌上銀行業務</h1>
+                    <P class="lead">
+                        <h3>我們的 e-BANK App ®應用程序可讓您快速<br>安全地訪問您的財務</h3>
+                    </P>
+                    <P>
+                        <h4>查看您的賬戶餘額</h4>
+                    </P>
+                    <P>
+                        <h4>使用 e-BANK App 匯款和收款</h4>
+                    </P>
+                    <P>
+                        <h4 style="padding-bottom: 40px;">檢視您的信用卡資訊</h4>
+                    </P>
+                        <div align="center">
+                            <P>
+                                <h4>Download our app</h4>
+                            </P>
+                           <a href="https://play.google.com/store/games?hl=zh_TW&gl=US"><img src="./img/googlePlayicon.png" alt="" style="width: 35%; border-radius: 50px;"></a>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <a href="https://play.google.com/store/games?hl=zh_TW&gl=US"><img src="./img/AppleStoreIcon.png" alt="" style="width: 35%; border-radius: 50px;"></a>
+                        </div>
+                </div>
+                <div class="col-md p-3">
+                    <img src="./img/cellphoneaE-Bank.png" alt="" class="float-end" style="width: 50%; margin-right: 150px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- 最底部 -->
+
+<footer>
+    <div class="d-flex bd-highlight justify-content-between yeee"
+        style="background-color: #423266;color: white;font-size: 18px;display: flex;text-align: center;">
+
+        <div class="p-2 flex-fill bd-highlight d-lg-block d-none">e-BANK國際商業銀行 Copyright e-Bank International Bank. All Rights
+                Reserved.
+            </div>
+        <div class="p-2 flex-fill bd-highlight">
+             <img src="./img/cloudyLogoMINI.png" style="width:5%;"><strong> &nbsp;©e-BANK國際商業銀行</strong>
+             <!-- 智慧客服 -->
+        <script>
+            function openForm() {
+              document.getElementById("conversation").style.display = "block";
+            }
+            
+            function closeForm() {
+              document.getElementById("conversation").style.display = "none";
+            }
+          </script>
+          <button class="open-button"onclick="openForm()" style="height: 43px;margin-bottom: -3vh;margin-right: 0vw;border-radius: 100px;">智慧客服</button>
+          
+          <div class="chat-popup"  id="conversation">
+            <form class="form-container">
+             <i class="fa-solid fa-chalkboard-user"></i> <h3>智慧客服</h3>
+          
+              <label for="msg">E-Bank</label>
+              <textarea placeholder="請輸入您的問題" name="msg" id="tta" required></textarea>
+          
+              <button type="submit" class="btn">發送</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">關閉</button>
+            </form>
+            <script>
+              document.getElementById("btn").addEventListener('click', () => {
+               document.getElementById("tta").innerHTML += '  Appended text';
+              });
+             </script>
+            <script>
+              $('form').submit((event) => {
+                event.preventDefault();
+                const message = $('#message').val();
+                $('textarea').append(`<p>您: ${message}</p>`);
+                $.post('/chat', { message }, (response) => {
+                  $('#conversation').append(`<p>E-Bank 客服小天使: ${response}</p>`);
+                });
+                $('#message').val('');
+              });
+            </script>
+          </div>
+        </div>
+
+    </div>
+    
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="./js/time.js"></script>
+</body>
+</html>
+
+<!-- 中間那三格間格底部白邊?瑕疵? -->
+<!-- https://www.bilibili.com/video/BV1Ag411u7RH/?spm_id_from=333.788.recommend_more_video.-1&vd_source=2733a3ad761f371dcff1a5223bf15b6a
+背景使用圖片滾輪效果 -->
