@@ -3,7 +3,7 @@ window.onload = function() {
     labels: ['1月', '2月', '3月', '4月','5月','6月','7月', '8月', '9月', '10月','11月','12月'],
     datasets: [{
       label: '我的資產走勢',
-      data: [20, 42, 25, 23],
+      data: [20, 42, 25, 23,20],
       backgroundColor: 'steelblue',
       borderColor: 'steelblue',
       borderWidth: 1

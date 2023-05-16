@@ -173,9 +173,26 @@
 
     <br>
 
+    <div class="row">
+        <!-- 員工輸入使用者帳號 -->
+        <div class="col-md-2" style="margin-left: 20px;"> 
+          <label for="username">會員帳號：</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" id="username" class="form-control">
+        </div>
+        <!-- 當員工輸入完帳號後，點擊按鈕執行 showContent() 函式 -->
+        <div class="col-md-3">
+          <button type="button" class="btn btn-primary" onclick="showContent()">查詢</button>
+        </div>
+    </div>
+
+
     <main class="d-flex flex-nowrap">
+    
         <!-- padding -->
-        <div class="container-fluid text-light mx-5" style="background-color: #b9b8b878; border-radius: 15px;margin-bottom: 30px;">
+        <!-- id="content" style="display:none;" 當輸入帳號後查詢 -->
+        <div class="container-fluid text-light mx-5"  id="content" style="display:none;" style="background-color: #b9b8b878; border-radius: 15px;margin-bottom: 30px;">
             <div class="row align-items-center justify-content-between d-flex">
                 <div class="col-md p-5" style="color: black;">
                     <!-- 內容，放這邊，灰框框內 -->
@@ -210,8 +227,8 @@
                                         <li>JHEN</li>
                                         <li>小白</li>
                                         <li>user@gmail.com</li>
-                                        <li>88/01/01</li>
-                                        <li>$1,000</li>
+                                        <li>1999/01/01</li>
+                                        <li>1,000</li>
                                         <li>是</li>
                                         <li>否</li>
                                         <li></li>
@@ -228,7 +245,7 @@
                         <!-- 查詢交易明細 -->
                         <hr>
                         <br>
-                        <p>帳戶餘額: <span id="AccountBalance">123,456</span></p>
+                        <p>帳戶餘額: <span id="AccountBalance">4,310</span></p>
                         
                         <section>
 
@@ -242,18 +259,18 @@
                                 <div class="card-header" style="background-color: white;">
                                     <ul class="nav card-header-tabs nav-tabs">
                                         <li class="nav-item">
-                                            <a class="nav-link active trade" href="#threem">
+                                            <a class="nav-link active trade" href="#fivem">
+                                                2023年5月
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link trade" href="#fourm">
+                                                2023年4月
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link trade" href="#threem">
                                                 2023年3月
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link trade" href="#twom">
-                                                2023年2月
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link trade" href="#onem">
-                                                2023年1月
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -264,10 +281,10 @@
                                     </ul>
                                 </div>
 
-                                <!-- 三月 -->
-                                <div class="card-body" id="threem">
+                                <!-- 五月 -->
+                                <div class="card-body" id="fivem">
                                     <table class="transaction-table active table table-striped table-hover"
-                                        data-month="2022-02">
+                                        data-month="2023-05">
                                         <thead>
                                             <tr>
                                                 <th>日期</th>
@@ -281,45 +298,64 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>2023/03/01</td>
-                                                <td>開戶</td>
-                                                <td>-</td>
-                                                <td>1,000</td>
-                                                <td>1,000</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2022/03/10</td>
-                                                <td>轉帳</td>
-                                                <td>-400</td>
-                                                <td>-</td>
-                                                <td>600</td>
-                                                <td>1234567890</td>
-                                                <td>轉帳給小明</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2022/03/15</td>
-                                                <td>轉帳</td>
-                                                <td>-100</td>
+                                                <td>2023-05-04</td>
+                                                <td>轉入</td>
                                                 <td>-</td>
                                                 <td>500</td>
-                                                <td>1234567890</td>
-                                                <td>轉帳給小分</td>
+                                                <td>4,310</td>
+                                                <td>036782741322</td>
+                                                <td>收入500 第四筆</td>
                                             </tr>
-                                            <!-- 其他交易資料 -->
+                                            <tr>
+                                                <td>2023-05-04</td>
+                                                <td>轉入</td>
+                                                <td>-</td>
+                                                <td>2,000</td>
+                                                <td>3,810</td>
+                                                <td>024578632478</td>
+                                                <td>收入2000 第三筆</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2023-05-04</td>
+                                                <td>轉出</td>
+                                                <td>1000</td>
+                                                <td>-</td>
+                                                <td>1,810</td>
+                                                <td>024578632478</td>
+                                                <td>支出1000 第二筆</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2023-05-04</td>
+                                                <td>轉入</td>
+                                                <td>-</td>
+                                                <td>100</td>
+                                                <td>2,810</td>
+                                                <td>024578632478</td>
+                                                <td>1號給我的100喝酒</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2023-05-03</td>
+                                                <td>轉入</td>
+                                                <td>-</td>
+                                                <td>50</td>
+                                                <td>2,710</td>
+                                                <td>024578632478</td>
+                                                <td>1號給我的50唱歌
+                                                </td>
+                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
 
                                 <!-- 二月 -->
-                                <div class="card-body d-none" id="twom">
-                                    二月
+                                <div class="card-body d-none" id="fourm">
+                                    四月
                                 </div>
 
                                 <!-- 一月 -->
-                                <div class="card-body d-none" id="onem">
-                                    一月
+                                <div class="card-body d-none" id="threem">
+                                    三月
                                 </div>
 
                                 <!-- 搜尋 -->
@@ -351,7 +387,6 @@
                         <div style="text-align: center;">
                             <button class="buttona">我要轉帳</button>
                             <button class="buttona">歷史明細下載</button>
-                            <button class="buttona">匯出明細</button>
                         </div>
 
                         <script>
@@ -369,13 +404,29 @@
 
                     </div>
 
-
-
                 </div>
             </div>
         </div>
 
     </main>
+
+    <!-- 當輸入帳號後查詢 -->
+    <script>
+        function showContent() {
+            // 獲取使用者輸入的帳號
+            var username = document.getElementById("username").value;
+            
+            // 檢查帳號是否為空
+            if (username === "") {
+                alert("請輸入會員帳號");
+                return;
+            }
+            
+            // 顯示要顯示的內容
+            var content = document.getElementById("content");
+            content.style.display = "block";
+        }
+    </script>
 
     <div style="height: 40px;"></div>
     <!-- 解決萬一有些螢幕太小造成底部fixed-bottom的footer會蓋住中間資訊，所以弄空白行與footer隔開一點 -->
